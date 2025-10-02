@@ -1,0 +1,65 @@
+/* =============================================== */
+/* === Utilidades de Brillo Neón para Secciones === */
+/* =============================================== */
+
+// Estilo Base para las secciones con brillo
+.section-glow {
+  position: relative;
+  overflow: hidden;
+
+  // Asegura que el contenido esté por encima del brillo
+  > .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Estilo A: Arriba-Izquierda (Cian) y Abajo-Derecha (Fucsia)
+.section-glow-a::before, .section-glow-a::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.25), transparent 70%);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.section-glow-a::before {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.25), transparent 70%);
+}
+
+.section-glow-a::after {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.25), transparent 70%);
+}
+
+
+// Estilo B (El Espejo): Arriba-Derecha (Cian) y Abajo-Izquierda (Fucsia)
+.section-glow-b::before, .section-glow-b::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.section-glow-b::before {
+  top: 0;
+  right: 0; // Cambiado
+  transform: translate(50%, -50%); // Cambiado
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.25), transparent 70%);
+}
+
+.section-glow-b::after {
+  bottom: 0;
+  left: 0; // Cambiado
+  transform: translate(-50%, 50%); // Cambiado
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.25), transparent 70%);
+}

@@ -1,0 +1,57 @@
+// Reutilizamos las variables de color para consistencia
+:host {
+  --cyan-glow: #22d3ee;
+  --fuchsia-glow: #d946ef;
+  --heart-glow: #f43f5e; // Un color rojo/rosado para el corazón
+}
+
+// Estilo base del footer y el borde SUPERIOR con gradiente
+footer {
+  position: relative; // Necesario para posicionar el borde
+  padding-top: 1px; // Añade un pequeño padding para que el borde se vea bien sin chocar con el contenido
+
+  // Usamos ::before para poner el gradiente en la parte de arriba
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; // Se posiciona justo en el borde superior del footer
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      var(--fuchsia-glow), // O un color que quieras para el footer, aquí usé fuchsia y cyan
+      var(--cyan-glow), 
+      transparent
+    );
+    // Reutilizamos la misma animación del header para el movimiento
+    animation: animate-border 4s linear infinite;
+  }
+}
+
+// Keyframes para la animación de levitación (los que ya tenías)
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); // Sube 10px en la mitad de la animación
+  }
+}
+
+// La clase que aplicaremos al ícono del corazón (la que ya tenías)
+.levitating-icon { // Cambiado a levitating-icon para ser más genérico, si te gusta el nombre original, déjalo
+  animation: levitate 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px var(--heart-glow));
+}
+
+// Reutilizamos la misma animación del gradiente del header para que sean consistentes
+// (Es buena idea tenerlo en un archivo global o en cada componente si no lo tienes global)
+@keyframes animate-border {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

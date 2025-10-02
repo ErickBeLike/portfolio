@@ -1,0 +1,19 @@
+/* Estilos para el borde degradado siempre visible en la imagen de perfil */
+.profile-pic-border {
+  position: relative; // Necesario para posicionar el pseudo-elemento del borde
+  border-radius: 12px; // Debe coincidir con el `rounded-xl` del HTML
+  
+  // El pseudo-elemento que será nuestro borde degradado
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -6px; // Extiende el borde 6px por fuera de la imagen
+    border-radius: 18px; // Para que el borde tenga el mismo radio que la imagen + el inset
+    padding: 2px; // Un pequeño padding para que el fondo del borde se vea
+    background: linear-gradient(90deg, var(--cyan-glow), var(--fuchsia-glow), var(--cyan-glow));
+    background-size: 200% 200%; // Para la animación del degradado
+    animation: animate-border 4s linear infinite; // Reutilizamos tu animación ya existente
+    z-index: -1; // Para que el borde quede "detrás" de la imagen
+    opacity: 1; // ¡SIEMPRE VISIBLE!
+  }
+}

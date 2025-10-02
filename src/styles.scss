@@ -1,1 +1,98 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definimos las variables de color globales para todo el proyecto */
+:root {
+  --cyan-glow: #22d3ee;
+  --fuchsia-glow: #d946ef;
+  --heart-glow: #f43f5e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =============================================== */
+/* === Utilidades de Brillo Neón para Secciones === */
+/* =============================================== */
+
+// Estilo Base para las secciones con brillo
+.section-glow {
+  position: relative;
+  overflow: hidden;
+
+  // Asegura que el contenido esté por encima del brillo
+  > .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.section-glow-a::before, .section-glow-a::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  filter: blur(90px); // <-- Un poco más de blur para expandir la luz
+  z-index: 0;
+}
+
+.section-glow-a::before {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.3), transparent 70%); // <-- Opacidad aumentada a 0.3
+}
+
+.section-glow-a::after {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.3), transparent 70%); // <-- Opacidad aumentada a 0.3
+}
+
+// Estilo B (El Espejo): Arriba-Derecha (Fucsia) y Abajo-Izquierda (Cian)
+.section-glow-b::before, .section-glow-b::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  filter: blur(90px);
+  z-index: 0;
+}
+
+.section-glow-b::before {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  // AHORA ESTE ES FUCSIA (ROSA)
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.3), transparent 70%); 
+}
+
+.section-glow-b::after {
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+  // Y AHORA ESTE ES CIAN (CELESTE)
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.3), transparent 70%); 
+}
+
+/* ========================================= */
+/* === Utilidad de Animación de Levitación === */
+/* ========================================= */
+
+// Keyframes para la animación (los movimos aquí desde el footer)
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px); // Un poco más sutil que antes
+  }
+}
+
+// La clase reutilizable que aplica la animación
+.levitating-icon {
+  animation: levitate 3s ease-in-out infinite;
+}

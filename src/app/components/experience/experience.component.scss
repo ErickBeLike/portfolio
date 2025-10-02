@@ -1,0 +1,62 @@
+:host section {
+  position: relative;
+}
+
+.timeline {
+  position: relative;
+  
+  // La línea vertical gris
+  &::before {
+    content: '';
+    position: absolute;
+    top: 16px; 
+    left: 11px;
+    width: 2px;
+    // Hacemos que la línea llegue hasta el final del contenedor
+    height: 100%; 
+    background-color: #334155;
+    z-index: 1;
+  }
+}
+
+// Clase base para todos los items, solo para el espaciado
+.timeline-item {
+  position: relative;
+  padding-left: 48px;
+}
+
+// ¡NUEVA CLASE! Solo los "eventos" tendrán el punto neón
+.timeline-event {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    z-index: 2; 
+
+    background-image: linear-gradient(45deg, var(--cyan-glow), var(--fuchsia-glow), var(--cyan-glow));
+    background-size: 200% 200%;
+    box-shadow: 0 0 12px rgba(217, 70, 239, 0.4);
+    animation: animate-node-glow 3s ease-in-out infinite;
+  }
+}
+
+// --- Animaciones (sin cambios) ---
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinning-icon {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes animate-node-glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

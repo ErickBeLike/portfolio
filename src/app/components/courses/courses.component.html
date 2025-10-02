@@ -1,0 +1,61 @@
+<section *transloco="let t" id="education" class="bg-black py-24 sm:py-32 section-glow section-glow-b">
+  <div class="container mx-auto max-w-7xl px-6">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold text-slate-100 sm:text-5xl">
+        {{ t('education.titlePart1') }} <span class="text-cyan-400">{{ t('education.titlePart2') }}</span>
+      </h2>
+      <div class="mx-auto mt-4 h-1.5 w-24 rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500"></div>
+    </div>
+
+    <div class="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      
+      <div class="flex flex-col rounded-xl border border-slate-800 bg-slate-900 text-center
+                  transition-all duration-300 hover:scale-105 hover:border-cyan-400/50">
+        <div class="flex-grow p-6">
+          <i class="ph-fill ph-graduation-cap text-6xl text-cyan-400"></i>
+          <h3 class="mt-4 text-lg font-bold text-slate-100">{{ t('education.tsu.title') }}</h3>
+          <p class="mt-1 text-sm text-slate-400">{{ t('education.tsu.subtitle') }}</p>
+          <p class="mt-2 text-xs italic text-slate-500">{{ t('education.tsu.institution') }}</p>
+        </div>
+        <div class="border-t border-slate-800 p-4">
+          <span class="inline-flex items-center gap-x-2 rounded-full bg-green-900/50 px-3 py-1 text-xs font-medium text-green-300">
+            <span class="h-2 w-2 rounded-full bg-green-400"></span>
+            {{ t('education.tsu.status') }}
+          </span>
+        </div>
+      </div>
+
+      <div class="flex flex-col rounded-xl border border-slate-800 bg-slate-900 text-center
+                  transition-all duration-300 hover:scale-105 hover:border-cyan-400/50">
+        <div class="flex-grow p-6">
+          <i class="ph-fill ph-graduation-cap text-6xl text-cyan-400"></i>
+          <h3 class="mt-4 text-lg font-bold text-slate-100">{{ t('education.engineering.title') }}</h3>
+          <p class="mt-1 text-sm text-slate-400">{{ t('education.engineering.subtitle') }}</p>
+          <p class="mt-2 text-xs italic text-slate-500">{{ t('education.engineering.institution') }}</p>
+        </div>
+        <div class="border-t border-slate-800 p-4">
+          <span class="inline-flex items-center gap-x-2 rounded-full bg-yellow-900/50 px-3 py-1 text-xs font-medium text-yellow-300">
+            <span class="h-2 w-2 rounded-full bg-yellow-400"></span>
+            {{ t('education.engineering.status') }}
+          </span>
+        </div>
+      </div>
+
+      <div class="flex flex-col rounded-xl border border-slate-800 bg-slate-900 text-center
+                  transition-all duration-300 hover:scale-105 hover:border-cyan-400/50">
+        <div class="flex-grow p-6">
+          <i class="devicon-spring-plain colored text-6xl"></i>
+          <h3 class="mt-4 text-lg font-bold text-slate-100">{{ t('education.spring.title') }}</h3>
+          <p class="mt-1 text-sm text-slate-400">{{ t('education.spring.subtitle') }}</p>
+        </div>
+        <div class="border-t border-slate-800 p-4">
+          <span class="inline-flex items-center gap-x-2 rounded-full bg-yellow-900/50 px-3 py-1 text-xs font-medium text-yellow-300">
+            <span class="h-2 w-2 rounded-full bg-yellow-400"></span>
+            {{ t('education.spring.status') }}
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

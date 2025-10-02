@@ -1,0 +1,41 @@
+<header class="fixed top-0 z-50 w-full transition-all duration-300" 
+        [ngClass]="{ 'bg-black/80 backdrop-blur-md initial-state': !isScrolled }">
+
+  <nav *transloco="let t" class="container mx-auto flex items-center justify-between px-6 h-20 transition-all duration-500 ease-in-out"
+       [ngClass]="{ 'notch': isScrolled, 'max-w-7xl': !isScrolled }">
+    
+    <a href="#" class="group flex items-center gap-x-3 text-2xl font-bold transition-colors">
+      <i class="ph-fill ph-alien text-3xl text-slate-300 transition-colors group-hover:text-fuchsia-400 
+                group-hover:drop-shadow-[0_0_8px_var(--tw-shadow-color)] shadow-fuchsia-400"></i>
+      <span class="text-slate-100 group-hover:text-white">
+        ErickBeLike<span class="text-fuchsia-400">.</span>
+      </span>
+    </a>
+    
+    <div class="hidden items-center space-x-6 md:flex">
+      <a href="#stack" class="nav-link" [ngClass]="{'active': activeSection === 'stack'}">{{ t('nav.stack') }}</a>
+      <a href="#experience" class="nav-link" [ngClass]="{'active': activeSection === 'experience'}">{{ t('nav.experience') }}</a>
+      <a href="#education" class="nav-link" [ngClass]="{'active': activeSection === 'education'}">{{ t('nav.education') }}</a>
+      <a href="#projects" class="nav-link" [ngClass]="{'active': activeSection === 'projects'}">{{ t('nav.projects') }}</a>
+      <a href="#about" class="nav-link" [ngClass]="{'active': activeSection === 'about'}">{{ t('nav.about') }}</a>
+      <a href="#hero" class="nav-link">{{ t('nav.contact') }}</a> </div>
+
+    <div class="md:hidden">
+      </div>
+  </nav>
+</header>
+
+<div class="fixed top-4 right-6 z-[60] flex items-center gap-x-1 rounded-full border border-slate-700 bg-slate-900/50 p-1 backdrop-blur-sm">
+  <button 
+    (click)="changeLanguage('en')"
+    [ngClass]="translocoService.getActiveLang() === 'en' ? 'bg-slate-700' : ''"
+    class="rounded-full px-3 py-1 text-sm font-bold text-slate-300 transition-colors hover:bg-slate-800">
+    EN
+  </button>
+  <button 
+    (click)="changeLanguage('es')"
+    [ngClass]="translocoService.getActiveLang() === 'es' ? 'bg-slate-700' : ''"
+    class="rounded-full px-3 py-1 text-sm font-bold text-slate-300 transition-colors hover:bg-slate-800">
+    ES
+  </button>
+</div>

@@ -1,0 +1,134 @@
+<section *transloco="let t" id="projects" class="bg-black py-24 sm:py-32 section-glow section-glow-a">
+  <div class="container mx-auto max-w-5xl px-6">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold text-slate-100 sm:text-5xl">
+        {{ t('projects.titlePart1') }} <span class="text-fuchsia-400">{{ t('projects.titlePart2') }}</span>
+      </h2>
+      <div class="mx-auto mt-4 h-1.5 w-24 rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500"></div>
+    </div>
+
+    <div class="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
+      
+      <div class="flex flex-col rounded-xl border border-slate-800 bg-slate-900 shadow-lg
+                  transition-all duration-300 hover:scale-105 hover:border-cyan-400/50 hover:shadow-cyan-400/20">
+        <div class="aspect-[16/8] overflow-hidden rounded-t-xl">
+          <img src="assets/projects/Suites-Center-logo.png" alt="Logo de Suites Center" class="h-full w-full object-cover">
+        </div>
+        <div class="flex flex-grow flex-col p-4 sm:p-5">
+          <h3 class="text-xl font-bold text-slate-100">Suites Center</h3>
+          <p class="mt-2 flex-grow text-base text-slate-400">
+            {{ t('projects.suitesCenter.description') }}
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="inline-flex items-center gap-x-2 rounded-full bg-green-900/50 px-3 py-1 text-xs font-medium text-green-300">
+              <span class="h-2 w-2 rounded-full bg-green-400"></span>
+              {{ t('projects.statusFinished') }}
+            </span>
+            <div class="flex items-center gap-x-3">
+              <a href="https://github.com/ErickBeLike/appweb_backend" target="_blank" class="group relative flex items-center text-xl text-slate-400 transition-colors hover:text-cyan-400">
+                <i class="ph ph-database"></i>
+                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 rounded bg-slate-700 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">{{ t('projects.backendRepo') }}</span>
+              </a>
+              <a href="https://github.com/ErickBeLike/appweb_frontend" target="_blank" class="group relative flex items-center text-xl text-slate-400 transition-colors hover:text-cyan-400">
+                <i class="ph ph-browsers"></i>
+                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 rounded bg-slate-700 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">{{ t('projects.frontendRepo') }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col rounded-xl border border-slate-800 bg-slate-900 shadow-lg
+                  transition-all duration-300 hover:scale-105 hover:border-cyan-400/50 hover:shadow-cyan-400/20">
+        <div class="aspect-[16/8] overflow-hidden rounded-t-xl">
+          <img src="assets/projects/SITIE-logo.png" alt="Logo de SITIE" class="h-full w-full object-cover">
+        </div>
+        <div class="flex flex-grow flex-col p-4 sm:p-5">
+          <h3 class="text-xl font-bold text-slate-100">SITIE</h3>
+          <p class="mt-2 flex-grow text-base text-slate-400">
+            {{ t('projects.sitie.description') }}
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="inline-flex items-center gap-x-2 rounded-full bg-green-900/50 px-3 py-1 text-xs font-medium text-green-300">
+              <span class="h-2 w-2 rounded-full bg-green-400"></span>
+              {{ t('projects.statusFinished') }}
+            </span>
+            <div class="flex items-center gap-x-3">
+              <a href="https://github.com/ErickBeLike/SitiePro-Backend" target="_blank" class="group relative flex items-center text-xl text-slate-400 transition-colors hover:text-cyan-400">
+                <i class="ph ph-database"></i>
+                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 rounded bg-slate-700 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">{{ t('projects.backendRepo') }}</span>
+              </a>
+              <a href="https://github.com/ErickBeLike/SitiePro-Frontend" target="_blank" class="group relative flex items-center text-xl text-slate-400 transition-colors hover:text-cyan-400">
+                <i class="ph ph-browsers"></i>
+                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 rounded bg-slate-700 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">{{ t('projects.frontendRepo') }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col rounded-xl border border-slate-800 bg-slate-900 shadow-lg
+                  transition-all duration-300 hover:scale-105 hover:border-cyan-400/50 hover:shadow-cyan-400/20">
+        <div class="aspect-[16/8] overflow-hidden rounded-t-xl">
+          <img src="assets/projects/RataCueva-logo.png" alt="Logo de Rata Cueva" class="h-full w-full object-cover">
+        </div>
+        <div class="flex flex-grow flex-col p-4 sm:p-5">
+          <h3 class="text-xl font-bold text-slate-100">Rata Cueva</h3>
+          <p class="mt-2 flex-grow text-base text-slate-400">
+            {{ t('projects.rataCueva.description') }}
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="inline-flex items-center gap-x-2 rounded-full bg-green-900/50 px-3 py-1 text-xs font-medium text-green-300">
+              <span class="h-2 w-2 rounded-full bg-green-400"></span>
+              {{ t('projects.statusFinished') }}
+            </span>
+            <div class="flex items-center gap-x-3">
+              <a href="https://github.com/styleEddie/ratacueva-api" target="_blank" class="group relative flex items-center text-xl text-slate-400 transition-colors hover:text-cyan-400">
+                <i class="ph ph-database"></i>
+                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 rounded bg-slate-700 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">{{ t('projects.backendRepo') }}</span>
+              </a>
+              <a href="https://github.com/chrisdev-ts/ratacueva-web" target="_blank" class="group relative flex items-center text-xl text-slate-400 transition-colors hover:text-cyan-400">
+                <i class="ph ph-browsers"></i>
+                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 rounded bg-slate-700 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">{{ t('projects.frontendRepo') }}</span>
+              </a>
+              <a href="https://ratacueva.netlify.app/home" target="_blank" class="group relative flex items-center text-xl text-slate-400 transition-colors hover:text-fuchsia-400">
+                <i class="ph ph-arrow-square-out"></i>
+                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 rounded bg-slate-700 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">{{ t('projects.viewDemo') }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex flex-col rounded-xl border border-slate-800 bg-slate-900 shadow-lg
+                  transition-all duration-300 hover:scale-105 hover:border-cyan-400/50 hover:shadow-cyan-400/20">
+        <div class="aspect-[16/8] overflow-hidden rounded-t-xl">
+          <img src="assets/projects/ShopIn-logo.png" alt="Logo de ShopIn" class="h-full w-full object-cover">
+        </div>
+        <div class="flex flex-grow flex-col p-4 sm:p-5">
+          <h3 class="text-xl font-bold text-slate-100">ShopIn</h3>
+          <p class="mt-2 flex-grow text-base text-slate-400">
+            {{ t('projects.shopIn.description') }}
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="inline-flex items-center gap-x-2 rounded-full bg-yellow-900/50 px-3 py-1 text-xs font-medium text-yellow-300">
+              <span class="h-2 w-2 rounded-full bg-yellow-400"></span>
+              {{ t('projects.statusInProgress') }}
+            </span>
+            <div class="flex items-center gap-x-3">
+              <a href="https://github.com/ErickBeLike/shopin-api" target="_blank" class="group relative flex items-center text-xl text-slate-400 transition-colors hover:text-cyan-400">
+                <i class="ph ph-database"></i>
+                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 rounded bg-slate-700 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">{{ t('projects.backendRepo') }}</span>
+              </a>
+              <a href="https://github.com/ErickBeLike/shopin-front" target="_blank" class="group relative flex items-center text-xl text-slate-400 transition-colors hover:text-cyan-400">
+                <i class="ph ph-browsers"></i>
+                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 rounded bg-slate-700 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">{{ t('projects.frontendRepo') }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

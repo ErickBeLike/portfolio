@@ -1,0 +1,99 @@
+{
+  "hero": {
+    "status": "Available for work",
+    "greeting": "Hey, I'm",
+    "bio_part1": "Final-year Software Development & Management Engineering student. Specializing in",
+    "bio_highlight": "backend architecture",
+    "bio_part2": "and building robust, scalable APIs. Passionate about engineering the powerful engines that drive great applications.",
+    "linkedin": "LinkedIn",
+    "gmail": "Gmail",
+    "discord": "Discord"
+  },
+  "nav": {
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "stack": "Stack",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "stack": {
+    "titlePart1": "My Tech",
+    "titlePart2": "Stack & Tools"
+  },
+  "experience": {
+    "titlePart1": "My",
+    "titlePart2": "Experience",
+    "suitesCenter": {
+      "title": "Professional Internship: Suites Center",
+      "date": "September 2023 - December 2023",
+      "description": "Graduation requirement for my Associate's Degree (TSU). Full-stack development of an administrative web application and a promotional landing page, applying academic knowledge in a real-world environment to meet business requirements."
+    },
+    "sitie": {
+      "title": "Capstone Business Project: SITIE",
+      "date": "January 2024 - April 2024",
+      "description": "Direct collaboration with a company to develop an internet service resale system. The project involved working from requirements gathering to the delivery of a functional solution tailored to their operational needs."
+    },
+    "rataCueva": {
+      "title": "Academic Project: Rata Cueva",
+      "date": "May 2023 - August 2023",
+      "description": "Collaborative development of a gaming e-commerce, simulating the dual role of developer and client to strengthen skills in communication, requirements gathering, and product-oriented thinking."
+    },
+    "loading": "Loading more achievements..."
+  },
+  "education": {
+    "titlePart1": "Education &",
+    "titlePart2": "Certifications",
+    "tsu": {
+      "title": "Associate's Degree (TSU)",
+      "subtitle": "Software Development",
+      "institution": "Technological University of the Center of Veracruz (UTCV)",
+      "status": "Completed"
+    },
+    "engineering": {
+      "title": "Bachelor's Degree (Engineering)",
+      "subtitle": "Software Development & Management",
+      "institution": "Technological University of the Center of Veracruz (UTCV)",
+      "status": "In Progress"
+    },
+    "spring": {
+      "title": "Mastering Spring Boot",
+      "subtitle": "Self-Paced Professional Development",
+      "status": "In Progress"
+    }
+  },
+  "projects": {
+    "titlePart1": "My",
+    "titlePart2": "Projects",
+    "statusFinished": "Finished",
+    "statusInProgress": "In Progress",
+    "suitesCenter": {
+      "description": "An administrative web application for managing rentals, rooms, guests, and sales for a hotel, including a promotional landing page."
+    },
+    "sitie": {
+      "description": "A system for a company that resells third-party internet services to rural areas, managing customers, services, and sales."
+    },
+    "rataCueva": {
+      "description": "A collaborative e-commerce platform focused on selling products, video games, and items from the gaming world."
+    },
+    "shopIn": {
+      "description": "A general catalog e-commerce with plans to evolve into a marketplace, integrating payment gateways and AI for recommendations."
+    },
+    "backendRepo": "Backend Repo",
+    "frontendRepo": "Frontend Repo",
+    "viewDemo": "View Demo"
+  },
+  "about": {
+    "title": "About me",
+    "p1": "My name is Erick Ernesto López Valdés, but in the dev world, I'm known as ErickBeLike. I got into programming out of a curiosity to understand how the video games and applications I used daily actually worked.",
+    "p2": "While I've forged myself as a full-stack developer, my true passion lies in the backend: designing the logic, refining services, and building the efficient, scalable endpoints that make everything run smoothly.",
+    "p3": "I'm a firm believer in finding a way to achieve my goals, no matter the obstacles. You could say I'm guilty of being an optimist, but it’s a trait that drives me to find solutions where others see dead ends. I operate on a simple philosophy: it’s better to tackle challenges with a positive mindset than to be defined by them.",
+    "mentality_part1": "From the world of gaming, I bring a core belief to my work:",
+    "mentality_highlight": "\"Everything is tryhardable.\"",
+    "mentality_part2": "When I commit to a goal, I pursue it with relentless dedication, constantly iterating and improving until I achieve mastery."
+  },
+  "footer": {
+    "motto": "Handcrafted, pixel by pixel.",
+    "rights": "All rights reserved."
+  }
+}
