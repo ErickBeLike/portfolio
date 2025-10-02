@@ -34,6 +34,13 @@ header.initial-state::after {
   position: relative;
   background: black;
 
+  padding: 0 16px; /* 16px de padding horizontal */
+
+  @media (min-width: 768px) {
+    /* En pantallas medianas y grandes, aumenta el padding */
+    padding: 0 32px;
+  }
+
   &::before {
     content: "";
     position: absolute;
