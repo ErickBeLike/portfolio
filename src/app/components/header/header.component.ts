@@ -10,40 +10,42 @@ import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements AfterViewInit {
-  // Lógica del Notch (sin cambios)
   isScrolled = false;
-  
-  // --- NUEVA LÓGICA PARA EL SCROLLSPY (Método Clásico) ---
   activeSection: string = '';
   private sectionPositions: { id: string, top: number }[] = [];
+  // Usamos una función de flecha para mantener el 'this' correcto
+  private calculatePositionsFn = () => this.calculateSectionPositions();
 
   constructor(
     public translocoService: TranslocoService,
     private cd: ChangeDetectorRef
   ) {}
 
-  // Se ejecuta después de que la vista se haya inicializado
   ngAfterViewInit(): void {
-    // Retrasamos un poco el cálculo para asegurarnos de que todo se haya renderizado
-    setTimeout(() => {
-      this.calculateSectionPositions();
-    }, 100);
+    // En lugar de un setTimeout, esperamos al evento 'load' de la ventana.
+    // Este evento se dispara SOLO cuando toda la página, incluyendo imágenes, está cargada.
+    window.addEventListener('load', this.calculatePositionsFn);
   }
 
-  // Función para calcular y guardar la posición de cada sección
+  // NUEVO: Si el usuario redimensiona la ventana, volvemos a calcular las posiciones
+  @HostListener('window:resize', [])
+  onWindowResize(): void {
+    this.calculateSectionPositions();
+  }
+
   calculateSectionPositions(): void {
     this.sectionPositions = [];
     document.querySelectorAll('section[id]').forEach(section => {
       if (section.id && section.id !== 'hero') {
+        const rect = section.getBoundingClientRect();
         this.sectionPositions.push({ 
           id: section.id, 
-          top: section.getBoundingClientRect().top + window.scrollY - 100 // -100px de offset
+          top: rect.top + window.scrollY - 80 // Offset de 80px (altura del header)
         });
       }
     });
   }
 
-  // El HostListener ahora tiene una lógica diferente
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     const scrollPosition = window.scrollY;
@@ -52,25 +54,31 @@ export class HeaderComponent implements AfterViewInit {
     if (scrollPosition > 10) { this.isScrolled = true; } 
     else { this.isScrolled = false; }
 
-    // --- NUEVO: Lógica del Scrollspy ---
+    // Lógica del Scrollspy
     let newActiveSection = '';
-    // Recorremos las posiciones guardadas para ver en cuál estamos
     for (const section of this.sectionPositions) {
       if (scrollPosition >= section.top) {
         newActiveSection = section.id;
       }
     }
+    
+    // Si estamos hasta arriba, no marcamos ninguna sección
+    if (scrollPosition < this.sectionPositions[0]?.top) {
+      newActiveSection = '';
+    }
 
-    // Actualizamos la sección activa SOLO si ha cambiado, para optimizar
     if (newActiveSection !== this.activeSection) {
       this.activeSection = newActiveSection;
-      this.cd.detectChanges(); // Forzamos la actualización de la vista
-      // DESCOMENTA LA SIGUIENTE LÍNEA PARA DEPURAR EN LA CONSOLA (F12)
-      // console.log('Sección Activa:', this.activeSection);
+      this.cd.detectChanges();
     }
   }
 
   changeLanguage(lang: string): void {
     this.translocoService.setActiveLang(lang);
+  }
+
+  // Limpiamos el event listener cuando el componente se destruye
+  ngOnDestroy(): void {
+    window.removeEventListener('load', this.calculatePositionsFn);
   }
 }
