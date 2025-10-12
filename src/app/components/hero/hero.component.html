@@ -1,11 +1,23 @@
-<section *transloco="let t" id="hero" class="bg-black py-24 sm:py-32 section-glow section-glow-a">
-  <div class="container mx-auto max-w-7xl px-6 text-center md:text-left">
+<section
+  *transloco="let t"
+  id="hero"
+  class="bg-black py-24 sm:py-32 section-glow section-glow-a px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 2xl:px-80"
+>
+  <div class="container mx-auto max-w-7xl text-center md:text-left">
     <div class="flex items-center justify-center gap-x-4 md:justify-start">
       <div class="relative">
-        <img src="assets/profile-pic.png" alt="Foto de perfil de Erick" class="h-16 w-16 rounded-full border-2 border-slate-700">
-        <div class="absolute -inset-2 -z-10 animate-pulse rounded-full bg-cyan-400 blur-xl"></div>
+        <img
+          src="assets/profile-pic.png"
+          alt="Foto de perfil de Erick"
+          class="h-16 w-16 rounded-full border-2 border-slate-700"
+        />
+        <div
+          class="absolute -inset-2 -z-10 animate-pulse rounded-full bg-cyan-400 blur-xl"
+        ></div>
       </div>
-      <span class="inline-flex items-center gap-x-2 rounded-full bg-green-900/50 px-4 py-1.5 text-sm font-medium text-green-300">
+      <span
+        class="inline-flex items-center gap-x-2 rounded-full bg-green-900/50 px-4 py-1.5 text-sm font-medium text-green-300"
+      >
         <span class="h-2 w-2 rounded-full bg-green-400"></span>
         {{ t('hero.status') }}
       </span>
@@ -20,19 +32,29 @@
       {{ t('hero.bio_part2') }}
     </p>
 
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start">
-      <a href="https://www.linkedin.com/in/erick-elv/" target="_blank" class="flex items-center gap-x-3 rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 font-bold text-slate-200 
-                                         transition-all duration-300 hover:scale-105 hover:border-blue-500 hover:text-blue-500">
+    <div
+      class="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start"
+    >
+      <a
+        href="https://www.linkedin.com/in/erick-elv/"
+        target="_blank"
+        class="flex items-center gap-x-3 rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 font-bold text-slate-200 transition-all duration-300 hover:scale-105 hover:border-blue-500 hover:text-blue-500"
+      >
         <i class="ph-fill ph-linkedin-logo text-2xl"></i>
         <span>{{ t('hero.linkedin') }}</span>
       </a>
-      <a href="mailto:ernestitos1512@gmail.com" class="flex items-center gap-x-3 rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 font-bold text-slate-200 
-                                                  transition-all duration-300 hover:scale-105 hover:border-red-500 hover:text-red-500">
+      <a
+        href="mailto:ernestitos1512@gmail.com"
+        class="flex items-center gap-x-3 rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 font-bold text-slate-200 transition-all duration-300 hover:scale-105 hover:border-red-500 hover:text-red-500"
+      >
         <i class="ph-fill ph-envelope-simple text-2xl"></i>
         <span>{{ t('hero.gmail') }}</span>
       </a>
-      <a href="https://discord.gg/ysky8xyz" target="_blank" class="flex items-center gap-x-3 rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 font-bold text-slate-200 
-                                         transition-all duration-300 hover:scale-105 hover:border-indigo-500 hover:text-indigo-500">
+      <a
+        href="https://discord.gg/ysky8xyz"
+        target="_blank"
+        class="flex items-center gap-x-3 rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 font-bold text-slate-200 transition-all duration-300 hover:scale-105 hover:border-indigo-500 hover:text-indigo-500"
+      >
         <i class="ph-fill ph-discord-logo text-2xl"></i>
         <span>{{ t('hero.discord') }}</span>
       </a>
