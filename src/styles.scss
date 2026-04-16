@@ -2,97 +2,262 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definimos las variables de color globales para todo el proyecto */
+/* ========================== */
+/* ===   BIOME THEMES      === */
+/* ========================== */
+
 :root {
-  --cyan-glow: #22d3ee;
-  --fuchsia-glow: #d946ef;
-  --heart-glow: #f43f5e;
+  --bg-primary:      #1A1B26;
+  --bg-secondary:    #24283B;
+  --text-base:       #C0CAF5;
+  --accent-primary:  #42D4F4;
+  --accent-secondary:#9ECE6A;
+}
+
+body.biome-deep-cave {
+  --bg-primary:      #1A1B26;
+  --bg-secondary:    #24283B;
+  --text-base:       #C0CAF5;
+  --accent-primary:  #42D4F4;
+  --accent-secondary:#9ECE6A;
+}
+
+body.biome-nether {
+  --bg-primary:      #2D1616;
+  --bg-secondary:    #4A2323;
+  --text-base:       #FADADD;
+  --accent-primary:  #FF3333;
+  --accent-secondary:#FFAA00;
+}
+
+body.biome-end {
+  --bg-primary:      #16161D;
+  --bg-secondary:    #2B2B36;
+  --text-base:       #E0E0E0;
+  --accent-primary:  #BB9AF7;
+  --accent-secondary:#F7768E;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* =============================================== */
-/* === Utilidades de Brillo Neón para Secciones === */
-/* =============================================== */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-base);
+  font-family: 'VT323', monospace;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
 
-// Estilo Base para las secciones con brillo
-.section-glow {
-  position: relative;
-  overflow: hidden;
+/* ========================== */
+/* ===  PIXEL ART UTILS    === */
+/* ========================== */
 
-  // Asegura que el contenido esté por encima del brillo
-  > .container {
-    position: relative;
-    z-index: 1;
+.pixel-card {
+  border: 3px solid var(--accent-primary);
+  background: var(--bg-secondary);
+  box-shadow: 5px 5px 0 0 var(--accent-primary);
+  border-radius: 0 !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 0 var(--accent-primary);
   }
 }
 
-.section-glow-a::before, .section-glow-a::after {
-  content: '';
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  filter: blur(90px); // <-- Un poco más de blur para expandir la luz
-  z-index: 0;
+.pixel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  border: 3px solid var(--accent-primary);
+  background: var(--bg-secondary);
+  color: var(--accent-primary);
+  box-shadow: 4px 4px 0 0 var(--accent-primary);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.6rem;
+  padding: 0.75rem 1.125rem;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  border-radius: 0 !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s;
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 var(--accent-primary);
+    background: var(--bg-primary);
+  }
+
+  &:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
 }
 
-.section-glow-a::before {
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.3), transparent 70%); // <-- Opacidad aumentada a 0.3
+.pixel-divider {
+  width: 72px;
+  height: 4px;
+  background: var(--accent-primary);
+  margin: 0 auto;
+  box-shadow: 4px 0 0 var(--accent-primary);
 }
 
-.section-glow-a::after {
-  bottom: 0;
-  right: 0;
-  transform: translate(50%, 50%);
-  background: radial-gradient(circle, rgba(217, 70, 239, 0.3), transparent 70%); // <-- Opacidad aumentada a 0.3
+.pixel-heading {
+  font-family: 'Press Start 2P', monospace;
+  color: var(--text-base);
+  line-height: 1.8;
+
+  .accent  { color: var(--accent-primary); }
+  .accent2 { color: var(--accent-secondary); }
 }
 
-// Estilo B (El Espejo): Arriba-Derecha (Fucsia) y Abajo-Izquierda (Cian)
-.section-glow-b::before, .section-glow-b::after {
-  content: '';
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  filter: blur(90px);
-  z-index: 0;
+.pixel-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--accent-secondary);
+  background: var(--bg-secondary);
+  color: var(--accent-secondary);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  padding: 0.4rem 0.75rem;
+  box-shadow: 2px 2px 0 0 var(--accent-secondary);
+  border-radius: 0 !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+  &:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 0 var(--accent-secondary);
+  }
 }
 
-.section-glow-b::before {
-  top: 0;
-  right: 0;
-  transform: translate(50%, -50%);
-  // AHORA ESTE ES FUCSIA (ROSA)
-  background: radial-gradient(circle, rgba(217, 70, 239, 0.3), transparent 70%); 
+.pixel-badge-done {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 2px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+  background: transparent;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  padding: 0.35rem 0.65rem;
 }
 
-.section-glow-b::after {
-  bottom: 0;
-  left: 0;
-  transform: translate(-50%, 50%);
-  // Y AHORA ESTE ES CIAN (CELESTE)
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.3), transparent 70%); 
+.pixel-badge-wip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 2px solid #FFAA00;
+  color: #FFAA00;
+  background: transparent;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  padding: 0.35rem 0.65rem;
 }
 
-/* ========================================= */
-/* === Utilidad de Animación de Levitación === */
-/* ========================================= */
+.pixel-section {
+  background-color: var(--bg-primary);
+}
 
-// Keyframes para la animación (los movimos aquí desde el footer)
+.pixel-section-alt {
+  background-color: var(--bg-secondary);
+}
+
+.section-prefix {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.6rem;
+  color: var(--accent-secondary);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* ========================== */
+/* ===    ANIMATIONS       === */
+/* ========================== */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.blink-cursor::after {
+  content: '█';
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  color: var(--accent-primary);
+  margin-left: 4px;
+}
+
 @keyframes levitate {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px); // Un poco más sutil que antes
-  }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
 }
 
-// La clase reutilizable que aplica la animación
 .levitating-icon {
   animation: levitate 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.spinning-icon {
+  animation: spin 2s linear infinite;
+}
+
+/* ========================== */
+/* ===  PIXEL TIMELINE     === */
+/* ========================== */
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--accent-primary) 0px,
+      var(--accent-primary) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.5rem;
+
+  &::before {
+    content: '▶';
+    position: absolute;
+    left: -2.3rem;
+    top: 1rem;
+    color: var(--accent-primary);
+    font-size: 0.75rem;
+    background: var(--bg-primary);
+    padding: 0 2px;
+  }
+}
+
+.timeline-event {
+  border: 3px solid var(--accent-primary);
+  background: var(--bg-secondary);
+  box-shadow: 5px 5px 0 0 var(--accent-primary);
+  padding: 1.25rem 1.5rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 0 var(--accent-primary);
+  }
 }

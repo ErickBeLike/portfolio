@@ -1,61 +1,82 @@
 <section
   *transloco="let t"
   id="hero"
-  class="bg-black py-24 sm:py-32 section-glow section-glow-a px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 2xl:px-80"
+  class="pixel-section py-24 sm:py-32 px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 2xl:px-80"
 >
   <div class="container mx-auto max-w-7xl text-center md:text-left">
+
+    <!-- Profile + Status row -->
     <div class="flex items-center justify-center gap-x-4 md:justify-start">
-      <div class="relative">
+      <div class="pixel-profile-wrap">
         <img
           src="assets/profile-pic.png"
           alt="Foto de perfil de Erick"
-          class="h-16 w-16 rounded-full border-2 border-slate-700"
+          class="h-16 w-16 object-cover"
+          style="image-rendering: pixelated;"
         />
-        <div
-          class="absolute -inset-2 -z-10 animate-pulse rounded-full bg-cyan-400 blur-xl"
-        ></div>
       </div>
-      <span
-        class="inline-flex items-center gap-x-2 rounded-full bg-green-900/50 px-4 py-1.5 text-sm font-medium text-green-300"
-      >
-        <span class="h-2 w-2 rounded-full bg-green-400"></span>
+      <span class="pixel-badge-done">
+        <span class="blink-dot"></span>
         {{ t('hero.status') }}
       </span>
     </div>
-    <h1 class="mt-8 text-5xl font-bold text-slate-100 sm:text-7xl">
-      {{ t('hero.greeting') }} <span class="text-cyan-400">ErickBeLike</span>
-    </h1>
 
-    <p class="mt-6 text-lg text-slate-300 sm:text-xl">
+    <!-- Title + Biome selector -->
+    <div class="mt-8 flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-start">
+      <h1 class="font-pixel text-xl sm:text-2xl leading-loose blink-cursor" style="color: var(--text-base);">
+        {{ t('hero.greeting') }}<br>
+        <span style="color: var(--accent-primary);">ErickBeLike</span>
+      </h1>
+
+      <!-- Biome selector widget -->
+      <div class="biome-selector">
+        <span class="biome-selector__label">// BIOME</span>
+        <div class="biome-selector__buttons">
+          <button
+            *ngFor="let b of biomes"
+            class="biome-btn"
+            [class.biome-btn--active]="currentBiome === b.id"
+            (click)="changeBiome(b.id)"
+            [title]="b.name"
+          >
+            <span class="biome-btn__icon">{{ b.emoji }}</span>
+            <span class="biome-btn__name">{{ b.name }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bio -->
+    <p class="mt-6 font-retro text-xl sm:text-2xl leading-relaxed" style="color: var(--text-base); opacity: 0.85;">
       {{ t('hero.bio_part1') }}
-      <span class="font-bold text-white">{{ t('hero.bio_highlight') }}</span>
+      <span class="font-bold" style="color: var(--accent-primary);">{{ t('hero.bio_highlight') }}</span>
       {{ t('hero.bio_part2') }}
     </p>
 
-    <div
-      class="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start"
-    >
+    <!-- CTA buttons -->
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start">
       <a
         href="https://www.linkedin.com/in/erick-elv/"
         target="_blank"
-        class="flex items-center gap-x-3 rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 font-bold text-slate-200 transition-all duration-300 hover:scale-105 hover:border-blue-500 hover:text-blue-500"
+        class="pixel-btn"
       >
-        <i class="ph-fill ph-linkedin-logo text-2xl"></i>
+        <i class="ph-fill ph-linkedin-logo text-lg"></i>
         <span>{{ t('hero.linkedin') }}</span>
       </a>
       <a
         href="mailto:ernestitos1512@gmail.com"
-        class="flex items-center gap-x-3 rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 font-bold text-slate-200 transition-all duration-300 hover:scale-105 hover:border-red-500 hover:text-red-500"
+        class="pixel-btn"
+        style="border-color: var(--accent-secondary); color: var(--accent-secondary); box-shadow: 4px 4px 0 0 var(--accent-secondary);"
       >
-        <i class="ph-fill ph-envelope-simple text-2xl"></i>
+        <i class="ph-fill ph-envelope-simple text-lg"></i>
         <span>{{ t('hero.gmail') }}</span>
       </a>
       <a
         href="https://discord.gg/ysky8xyz"
         target="_blank"
-        class="flex items-center gap-x-3 rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 font-bold text-slate-200 transition-all duration-300 hover:scale-105 hover:border-indigo-500 hover:text-indigo-500"
+        class="pixel-btn"
       >
-        <i class="ph-fill ph-discord-logo text-2xl"></i>
+        <i class="ph-fill ph-discord-logo text-lg"></i>
         <span>{{ t('hero.discord') }}</span>
       </a>
     </div>

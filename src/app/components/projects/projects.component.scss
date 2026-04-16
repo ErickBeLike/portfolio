@@ -1,0 +1,10 @@
+.project-link {
+  color: var(--text-base);
+  opacity: 0.6;
+  transition: color 0.2s, opacity 0.2s;
+
+  &:hover {
+    color: var(--accent-primary);
+    opacity: 1;
+  }
+}

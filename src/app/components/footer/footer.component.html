@@ -1,24 +1,23 @@
-<footer *transloco="let t" class="bg-black">
+<footer *transloco="let t" class="pixel-section-alt" style="border-top: 3px solid var(--accent-primary); box-shadow: 0 -3px 0 0 var(--accent-primary);">
   <div class="container mx-auto px-6 py-12">
 
     <div class="flex flex-col items-center gap-y-4">
-      
-      <i class="ph-fill ph-heart levitating-icon text-4xl text-rose-500 drop-shadow-[0_0_8px_var(--tw-shadow-color)] shadow-rose-500"></i>
-
-      <p class="font-retro text-center text-[20px] text-slate-400">
+      <i class="ph-fill ph-heart levitating-icon text-4xl" style="color: var(--accent-secondary);"></i>
+      <p class="font-retro text-center text-2xl" style="color: var(--text-base); opacity: 0.75;">
         {{ t('footer.motto') }}
       </p>
-
     </div>
-    
-    <div class="mt-8 pt-6 text-center">
-      <p class="text-sm text-slate-300">
-        <a href="mailto:ernestitos1512@gmail.com" class="transition-colors hover:text-cyan-400">
+
+    <div class="mt-8 pt-6 text-center" style="border-top: 2px solid var(--accent-primary); opacity: 0.4;">
+    </div>
+    <div class="text-center mt-4">
+      <p class="font-retro text-xl" style="color: var(--text-base);">
+        <a href="mailto:ernestitos1512@gmail.com" style="color: var(--accent-primary); transition: color 0.2s;" onmouseover="this.style.color='var(--accent-secondary)'" onmouseout="this.style.color='var(--accent-primary)'">
           ernestitos1512&#64;gmail.com
         </a>
       </p>
-      <p class="mt-2 text-xs text-slate-500">
-        &copy; 2025 <span class="font-semibold text-slate-300">ErickBeLike</span>. {{ t('footer.rights') }}
+      <p class="mt-2 font-pixel text-[0.45rem] leading-loose" style="color: var(--text-base); opacity: 0.45;">
+        &copy; 2025 <span style="color: var(--accent-primary);">ErickBeLike</span>. {{ t('footer.rights') }}
       </p>
     </div>
 

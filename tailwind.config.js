@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        retro: ['"VT323"', 'monospace'],
+        retro:  ['"VT323"', 'monospace'],
+        pixel:  ['"Press Start 2P"', 'monospace'],
       },
     },
   },
