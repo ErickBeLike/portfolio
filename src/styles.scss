@@ -113,6 +113,7 @@ body {
 }
 
 .pixel-tag {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -129,6 +130,20 @@ body {
   &:hover {
     transform: translate(-1px, -1px);
     box-shadow: 3px 3px 0 0 var(--accent-secondary);
+  }
+}
+
+.pixel-tag--fav {
+  &::after {
+    content: '★';
+    position: absolute;
+    top: -9px;
+    right: -7px;
+    font-size: 0.75rem;
+    color: #FFD700;
+    line-height: 1;
+    pointer-events: none;
+    font-family: sans-serif;
   }
 }
 

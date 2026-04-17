@@ -2,61 +2,100 @@
   position: relative;
 }
 
+/* ==============================
+   ALTERNATING TIMELINE
+============================== */
+
 .timeline {
   position: relative;
-  
-  // La línea vertical gris
+
+  /* Center dashed line */
   &::before {
     content: '';
     position: absolute;
-    top: 16px; 
-    left: 11px;
-    width: 2px;
-    // Hacemos que la línea llegue hasta el final del contenedor
-    height: 100%; 
-    background-color: #334155;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--accent-primary) 0px,
+      var(--accent-primary) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    z-index: 0;
+
+    @media (max-width: 767px) {
+      left: 14px;
+      transform: none;
+    }
+  }
+}
+
+/* Each experience entry */
+.timeline-event {
+  display: flex;
+  position: relative;
+  margin-bottom: 3.5rem;
+  width: 100%;
+
+  /* Diamond node on center line */
+  &::before {
+    content: '◆';
+    position: absolute;
+    left: 50%;
+    top: 1.5rem;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: var(--accent-primary);
+    z-index: 2;
+    line-height: 1;
+    background: var(--bg-primary);
+    padding: 0 3px;
+
+    @media (max-width: 767px) {
+      left: 8px;
+      transform: none;
+    }
+  }
+
+  /* Card */
+  .timeline-event__card {
+    width: calc(50% - 2.75rem);
     z-index: 1;
   }
-}
 
-// Clase base para todos los items, solo para el espaciado
-.timeline-item {
-  position: relative;
-  padding-left: 48px;
-}
+  /* ODD → LEFT */
+  &:nth-child(odd) {
+    justify-content: flex-start;
 
-// ¡NUEVA CLASE! Solo los "eventos" tendrán el punto neón
-.timeline-event {
-  &::before {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 0;
-    width: 24px;
-    height: 24px;
-    border-radius: 9999px;
-    z-index: 2; 
+    @media (max-width: 767px) {
+      justify-content: flex-end;
 
-    background-image: linear-gradient(45deg, var(--cyan-glow), var(--fuchsia-glow), var(--cyan-glow));
-    background-size: 200% 200%;
-    box-shadow: 0 0 12px rgba(217, 70, 239, 0.4);
-    animation: animate-node-glow 3s ease-in-out infinite;
+      .timeline-event__card {
+        width: calc(100% - 3rem);
+      }
+    }
+  }
+
+  /* EVEN → RIGHT */
+  &:nth-child(even) {
+    justify-content: flex-end;
+
+    @media (max-width: 767px) {
+      justify-content: flex-end;
+
+      .timeline-event__card {
+        width: calc(100% - 3rem);
+      }
+    }
   }
 }
 
-// --- Animaciones (sin cambios) ---
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.spinning-icon {
-  display: inline-block;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes animate-node-glow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* WIP footer */
+.timeline-wip {
+  text-align: center;
+  padding-top: 0.5rem;
 }

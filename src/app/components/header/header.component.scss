@@ -1,11 +1,14 @@
 /* === Header Base === */
 header {
-  background-color: transparent;
+  background-color: var(--bg-primary);
+  border-bottom: 3px solid var(--accent-primary);
+  box-shadow: 0 3px 0 0 var(--accent-primary);
+  transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 
-  &.header--initial {
-    background-color: var(--bg-primary);
-    border-bottom: 3px solid var(--accent-primary);
-    box-shadow: 0 3px 0 0 var(--accent-primary);
+  &:not(.header--initial) {
+    background-color: transparent;
+    border-bottom-color: transparent;
+    box-shadow: 0 0 0 0 transparent;
   }
 }
 
@@ -21,9 +24,21 @@ header {
   box-shadow: 5px 5px 0 0 var(--accent-primary);
   padding: 0 20px;
   transition: border-color 0.4s, box-shadow 0.4s;
+  animation: notch-enter 0.35s ease-out forwards;
 
   @media (min-width: 768px) {
     padding: 0 32px;
+  }
+}
+
+@keyframes notch-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -53,6 +68,9 @@ header {
 /* === Nav Links === */
 .nav-link {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
   font-family: 'Press Start 2P', monospace;
   font-size: 0.55rem;
   color: var(--text-base);
@@ -62,10 +80,12 @@ header {
   transition: color 0.2s;
 
   &::before {
-    content: '> ';
+    content: '>';
     opacity: 0;
     transition: opacity 0.2s;
     color: var(--accent-primary);
+    line-height: 1;
+    flex-shrink: 0;
   }
 
   &::after {
