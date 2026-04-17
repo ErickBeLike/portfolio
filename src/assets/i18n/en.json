@@ -2,7 +2,7 @@
   "hero": {
     "status": "Available for work",
     "greeting": "Hey, I'm",
-    "bio_part1": "Final-year Software Development & Management Engineering student. Specializing in",
+    "bio_part1": "Software Development & Management Engineer. Specializing in",
     "bio_highlight": "backend architecture",
     "bio_part2": "and building robust, scalable APIs. Passionate about engineering the powerful engines that drive great applications.",
     "linkedin": "LinkedIn",
@@ -56,11 +56,12 @@
       "title": "Bachelor's Degree (Engineering)",
       "subtitle": "Software Development & Management",
       "institution": "Technological University of the Center of Veracruz (UTCV)",
-      "status": "In Progress"
+      "status": "Completed"
     },
     "spring": {
       "title": "Mastering Spring Boot",
       "subtitle": "Self-Paced Professional Development",
+      "courseNote": "Courses and certifications via",
       "status": "In Progress"
     }
   },

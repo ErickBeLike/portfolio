@@ -2,7 +2,7 @@
   "hero": {
     "status": "Disponible para trabajar",
     "greeting": "Hola, soy",
-    "bio_part1": "Estudiante de último año de Ing. en Desarrollo y Gestión de Software. Especializado en",
+    "bio_part1": "Ingeniero en Desarrollo y Gestión de Software. Especializado en",
     "bio_highlight": "arquitectura backend",
     "bio_part2": "y en la creación de APIs robustas y escalables. Apasionado por construir los motores que impulsan grandes aplicaciones.",
     "linkedin": "LinkedIn",
@@ -56,11 +56,12 @@
       "title": "Ingeniería",
       "subtitle": "Desarrollo y Gestión de Software",
       "institution": "Universidad Tecnológica del Centro de Veracruz (UTCV)",
-      "status": "En Progreso"
+      "status": "Completado"
     },
     "spring": {
       "title": "Master en Spring Boot",
       "subtitle": "Desarrollo Profesional Autodidacta",
+      "courseNote": "Cursos y certificaciones vía",
       "status": "En Progreso"
     }
   },

@@ -7,13 +7,14 @@ export interface BiomeConfig {
   id: Biome;
   name: string;
   emoji: string;
+  image: string;
   labelKey: string;
 }
 
 export const BIOMES: BiomeConfig[] = [
-  { id: 'deep-cave', name: 'Deep Cave', emoji: '⛏', labelKey: 'I' },
-  { id: 'nether',    name: 'The Nether', emoji: '🔥', labelKey: 'II' },
-  { id: 'end',       name: 'The End',    emoji: '✦',  labelKey: 'III' },
+  { id: 'deep-cave', name: 'Overworld', emoji: '⛏', image: 'assets/extras/overworld.webp', labelKey: 'I' },
+  { id: 'nether',    name: 'The Nether', emoji: '🔥', image: 'assets/extras/nether.webp',   labelKey: 'II' },
+  { id: 'end',       name: 'The End',    emoji: '✦',  image: 'assets/extras/end.webp',      labelKey: 'III' },
 ];
 
 @Injectable({ providedIn: 'root' })

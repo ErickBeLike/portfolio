@@ -9,6 +9,8 @@
 :root {
   --bg-primary:      #1A1B26;
   --bg-secondary:    #24283B;
+  --bg-header:       #0d0e18;
+  --bg-footer:       #0d0e18;
   --text-base:       #C0CAF5;
   --accent-primary:  #42D4F4;
   --accent-secondary:#9ECE6A;
@@ -17,6 +19,8 @@
 body.biome-deep-cave {
   --bg-primary:      #1A1B26;
   --bg-secondary:    #24283B;
+  --bg-header:       #0d0e18;
+  --bg-footer:       #0d0e18;
   --text-base:       #C0CAF5;
   --accent-primary:  #42D4F4;
   --accent-secondary:#9ECE6A;
@@ -25,6 +29,8 @@ body.biome-deep-cave {
 body.biome-nether {
   --bg-primary:      #2D1616;
   --bg-secondary:    #4A2323;
+  --bg-header:       #180a0a;
+  --bg-footer:       #180a0a;
   --text-base:       #FADADD;
   --accent-primary:  #FF3333;
   --accent-secondary:#FFAA00;
@@ -33,6 +39,8 @@ body.biome-nether {
 body.biome-end {
   --bg-primary:      #16161D;
   --bg-secondary:    #2B2B36;
+  --bg-header:       #09090d;
+  --bg-footer:       #09090d;
   --text-base:       #E0E0E0;
   --accent-primary:  #BB9AF7;
   --accent-secondary:#F7768E;
@@ -135,16 +143,16 @@ body {
 
 .pixel-tag--fav {
   &::after {
-    content: '★';
+    content: '';
     position: absolute;
     top: -13px;
     right: -10px;
-    font-size: 1.2rem;
-    color: #FFD700;
-    line-height: 1;
+    width: 1.3rem;
+    height: 1.3rem;
+    background-image: url('/assets/extras/star.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
     pointer-events: none;
-    font-family: sans-serif;
-    text-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
   }
 }
 

@@ -4,7 +4,7 @@
 >
   <nav
     *transloco="let t"
-    class="container mx-auto flex items-center justify-between h-20"
+    class="relative container mx-auto flex items-center justify-between h-20"
     [class.pixel-notch]="isScrolled"
     [class.max-w-7xl]="!isScrolled"
   >
@@ -13,7 +13,7 @@
       <span>ErickBeLike<span class="pixel-logo__dot">.</span></span>
     </a>
 
-    <div class="hidden items-center gap-x-6 md:flex">
+    <div class="hidden items-center gap-x-3 md:flex">
       <a href="#stack"      class="nav-link" [class.active]="activeSection === 'stack'"      >{{ t('nav.stack') }}</a>
       <a href="#experience" class="nav-link" [class.active]="activeSection === 'experience'" >{{ t('nav.experience') }}</a>
       <a href="#education"  class="nav-link" [class.active]="activeSection === 'education'"  >{{ t('nav.education') }}</a>
@@ -22,12 +22,24 @@
       <a href="#hero"       class="nav-link">{{ t('nav.contact') }}</a>
     </div>
 
-    <div class="md:hidden"></div>
+    <!-- Mobile: language switcher — right side, vertically centered -->
+    <div class="pixel-lang-switcher pixel-lang-switcher--mobile">
+      <button
+        (click)="changeLanguage('en')"
+        [class.active]="translocoService.getActiveLang() === 'en'"
+        class="lang-btn"
+      >EN</button>
+      <button
+        (click)="changeLanguage('es')"
+        [class.active]="translocoService.getActiveLang() === 'es'"
+        class="lang-btn"
+      >ES</button>
+    </div>
   </nav>
 </header>
 
-<!-- Language switcher -->
-<div class="fixed top-4 right-6 z-[60] pixel-lang-switcher">
+<!-- Language switcher — desktop only (fixed) -->
+<div class="pixel-lang-switcher pixel-lang-switcher--desktop fixed top-4 right-6 z-[60]">
   <button
     (click)="changeLanguage('en')"
     [class.active]="translocoService.getActiveLang() === 'en'"
