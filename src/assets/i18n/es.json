@@ -1,5 +1,6 @@
 {
   "hero": {
+    "themeLabel": "TEMA",
     "status": "Disponible para trabajar",
     "greeting": "Hola, soy",
     "bio_part1": "Ingeniero en Desarrollo y Gestión de Software. Especializado en",

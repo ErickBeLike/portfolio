@@ -1,5 +1,6 @@
 {
   "hero": {
+    "themeLabel": "THEME",
     "status": "Available for work",
     "greeting": "Hey, I'm",
     "bio_part1": "Software Development & Management Engineer. Specializing in",
