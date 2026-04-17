@@ -58,8 +58,8 @@ export class AppComponent implements OnInit, OnDestroy {
     const y = window.scrollY;
     const delta = y - this._lastScrollY;
     this._lastScrollY = y;
-    // Push offset proportional to scroll delta (0.1 = subtle parallax)
-    this._scrollOffset += delta * 0.1;
+    // Push offset proportional to scroll delta (0.3 = noticeable parallax)
+    this._scrollOffset += delta * 0.3;
   }
 
   private _animate(time: number): void {
@@ -67,8 +67,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this._lastTime = time;
     this._floatTime += dt;
 
-    // Frame-rate independent exponential decay toward 0 (~0.5s to settle)
-    this._scrollOffset *= Math.pow(0.88, 60 * dt);
+    // Frame-rate independent exponential decay toward 0 (~1s to settle)
+    this._scrollOffset *= Math.pow(0.93, 60 * dt);
 
     const so = this._scrollOffset;
     const t = this._floatTime;

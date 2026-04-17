@@ -157,6 +157,11 @@ body::after {
 }
 
 /* Gaming overlay decorations (crosses, outlines, diamonds) */
+.app-content {
+  position: relative;
+  z-index: 1;
+}
+
 .pixel-bg-layer {
   position: fixed;
   inset: 0;
