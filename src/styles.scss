@@ -51,10 +51,288 @@ html {
 }
 
 body {
-  background-color: var(--bg-primary);
+  background:
+    linear-gradient(
+      to bottom,
+      var(--bg-primary) 0%,
+      color-mix(in srgb, var(--bg-primary) 55%, var(--accent-primary) 45%) 50%,
+      var(--bg-primary) 100%
+    );
+  background-attachment: fixed;
   color: var(--text-base);
   font-family: 'VT323', monospace;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: color 0.4s ease;
+  position: relative;
+}
+
+/* Global pixel square decorations */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes px-float-a {
+  0%   { transform: translateY(0px); opacity: 0.2; }
+  50%  { transform: translateY(-14px); opacity: 0.32; }
+  100% { transform: translateY(0px); opacity: 0.2; }
+}
+
+@keyframes px-float-b {
+  0%   { transform: translateY(0px); opacity: 0.13; }
+  50%  { transform: translateY(10px); opacity: 0.22; }
+  100% { transform: translateY(0px); opacity: 0.13; }
+}
+
+body::before {
+  animation: px-float-a 8s ease-in-out infinite;
+  box-shadow:
+    50px 40px 0 3px var(--accent-primary),
+    180px 80px 0 5px var(--accent-primary),
+    320px 20px 0 2px var(--accent-primary),
+    450px 65px 0 4px var(--accent-primary),
+    620px 35px 0 3px var(--accent-primary),
+    800px 85px 0 5px var(--accent-primary),
+    970px 15px 0 2px var(--accent-primary),
+    1130px 55px 0 4px var(--accent-primary),
+    1300px 90px 0 3px var(--accent-primary),
+    1480px 30px 0 5px var(--accent-primary),
+    1650px 70px 0 2px var(--accent-primary),
+    1820px 45px 0 4px var(--accent-primary),
+    30px 200px 0 4px var(--accent-primary),
+    170px 250px 0 2px var(--accent-primary),
+    340px 180px 0 5px var(--accent-primary),
+    490px 290px 0 3px var(--accent-primary),
+    660px 220px 0 4px var(--accent-primary),
+    830px 270px 0 2px var(--accent-primary),
+    1000px 200px 0 5px var(--accent-primary),
+    1200px 260px 0 3px var(--accent-primary),
+    1420px 185px 0 4px var(--accent-primary),
+    1700px 230px 0 2px var(--accent-primary),
+    100px 450px 0 3px var(--accent-primary),
+    350px 500px 0 5px var(--accent-primary),
+    600px 420px 0 2px var(--accent-primary),
+    850px 480px 0 4px var(--accent-primary),
+    1100px 440px 0 3px var(--accent-primary),
+    1400px 510px 0 5px var(--accent-primary),
+    1700px 460px 0 2px var(--accent-primary),
+    200px 680px 0 4px var(--accent-primary),
+    500px 720px 0 3px var(--accent-primary),
+    800px 650px 0 5px var(--accent-primary),
+    1150px 700px 0 2px var(--accent-primary),
+    1500px 660px 0 4px var(--accent-primary),
+    1800px 720px 0 3px var(--accent-primary);
+}
+
+body::after {
+  animation: px-float-b 11s ease-in-out infinite;
+  box-shadow:
+    130px 60px 0 3px var(--accent-secondary),
+    280px 100px 0 4px var(--accent-secondary),
+    530px 50px 0 2px var(--accent-secondary),
+    710px 95px 0 5px var(--accent-secondary),
+    890px 40px 0 3px var(--accent-secondary),
+    1060px 75px 0 4px var(--accent-secondary),
+    1230px 55px 0 2px var(--accent-secondary),
+    1570px 80px 0 5px var(--accent-secondary),
+    1750px 20px 0 3px var(--accent-secondary),
+    80px 300px 0 5px var(--accent-secondary),
+    260px 340px 0 2px var(--accent-secondary),
+    570px 310px 0 4px var(--accent-secondary),
+    780px 360px 0 3px var(--accent-secondary),
+    1050px 320px 0 5px var(--accent-secondary),
+    1300px 380px 0 2px var(--accent-secondary),
+    1600px 300px 0 4px var(--accent-secondary),
+    1850px 350px 0 3px var(--accent-secondary),
+    450px 600px 0 4px var(--accent-secondary),
+    1000px 580px 0 3px var(--accent-secondary),
+    1350px 620px 0 5px var(--accent-secondary);
+}
+
+/* Gaming overlay decorations (crosses, outlines, diamonds) */
+.pixel-bg-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+@keyframes px-drift {
+  0%   { transform: translateY(0px) rotate(0deg); opacity: 0.18; }
+  50%  { transform: translateY(-18px) rotate(0deg); opacity: 0.28; }
+  100% { transform: translateY(0px) rotate(0deg); opacity: 0.18; }
+}
+
+@keyframes px-drift-slow {
+  0%   { transform: translateY(0px); opacity: 0.12; }
+  50%  { transform: translateY(12px); opacity: 0.2; }
+  100% { transform: translateY(0px); opacity: 0.12; }
+}
+
+/* Pixel cross shape using ::before + ::after */
+.pixel-bg-layer::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 0;
+  animation: px-drift 13s ease-in-out infinite;
+  /* Crosses: built from 2 overlapping rect shadows */
+  box-shadow:
+    /* cross at 240,120 */
+    238px 120px 0 1px var(--accent-primary),
+    239px 120px 0 1px var(--accent-primary),
+    240px 118px 0 1px var(--accent-primary),
+    240px 119px 0 1px var(--accent-primary),
+    240px 120px 0 1px var(--accent-primary),
+    240px 121px 0 1px var(--accent-primary),
+    240px 122px 0 1px var(--accent-primary),
+    241px 120px 0 1px var(--accent-primary),
+    242px 120px 0 1px var(--accent-primary),
+    /* cross at 760,310 */
+    758px 310px 0 1px var(--accent-primary),
+    759px 310px 0 1px var(--accent-primary),
+    760px 308px 0 1px var(--accent-primary),
+    760px 309px 0 1px var(--accent-primary),
+    760px 310px 0 1px var(--accent-primary),
+    760px 311px 0 1px var(--accent-primary),
+    760px 312px 0 1px var(--accent-primary),
+    761px 310px 0 1px var(--accent-primary),
+    762px 310px 0 1px var(--accent-primary),
+    /* cross at 1400,180 */
+    1398px 180px 0 1px var(--accent-secondary),
+    1399px 180px 0 1px var(--accent-secondary),
+    1400px 178px 0 1px var(--accent-secondary),
+    1400px 179px 0 1px var(--accent-secondary),
+    1400px 180px 0 1px var(--accent-secondary),
+    1400px 181px 0 1px var(--accent-secondary),
+    1400px 182px 0 1px var(--accent-secondary),
+    1401px 180px 0 1px var(--accent-secondary),
+    1402px 180px 0 1px var(--accent-secondary),
+    /* cross at 1050,520 */
+    1048px 520px 0 1px var(--accent-secondary),
+    1049px 520px 0 1px var(--accent-secondary),
+    1050px 518px 0 1px var(--accent-secondary),
+    1050px 519px 0 1px var(--accent-secondary),
+    1050px 520px 0 1px var(--accent-secondary),
+    1050px 521px 0 1px var(--accent-secondary),
+    1050px 522px 0 1px var(--accent-secondary),
+    1051px 520px 0 1px var(--accent-secondary),
+    1052px 520px 0 1px var(--accent-secondary),
+    /* cross at 400,650 */
+    398px 650px 0 1px var(--accent-primary),
+    399px 650px 0 1px var(--accent-primary),
+    400px 648px 0 1px var(--accent-primary),
+    400px 649px 0 1px var(--accent-primary),
+    400px 650px 0 1px var(--accent-primary),
+    400px 651px 0 1px var(--accent-primary),
+    400px 652px 0 1px var(--accent-primary),
+    401px 650px 0 1px var(--accent-primary),
+    402px 650px 0 1px var(--accent-primary),
+    /* pixel outline squares (hollow) */
+    /* top-left 8px hollow square at 1600,400 */
+    1600px 400px 0 0 var(--accent-primary), 1601px 400px 0 0 var(--accent-primary),
+    1602px 400px 0 0 var(--accent-primary), 1603px 400px 0 0 var(--accent-primary),
+    1604px 400px 0 0 var(--accent-primary), 1605px 400px 0 0 var(--accent-primary),
+    1606px 400px 0 0 var(--accent-primary), 1607px 400px 0 0 var(--accent-primary),
+    1600px 401px 0 0 var(--accent-primary), 1607px 401px 0 0 var(--accent-primary),
+    1600px 402px 0 0 var(--accent-primary), 1607px 402px 0 0 var(--accent-primary),
+    1600px 403px 0 0 var(--accent-primary), 1607px 403px 0 0 var(--accent-primary),
+    1600px 404px 0 0 var(--accent-primary), 1607px 404px 0 0 var(--accent-primary),
+    1600px 405px 0 0 var(--accent-primary), 1607px 405px 0 0 var(--accent-primary),
+    1600px 406px 0 0 var(--accent-primary), 1607px 406px 0 0 var(--accent-primary),
+    1600px 407px 0 0 var(--accent-primary), 1607px 407px 0 0 var(--accent-primary),
+    1601px 407px 0 0 var(--accent-primary), 1602px 407px 0 0 var(--accent-primary),
+    1603px 407px 0 0 var(--accent-primary), 1604px 407px 0 0 var(--accent-primary),
+    1605px 407px 0 0 var(--accent-primary), 1606px 407px 0 0 var(--accent-primary),
+    /* hollow square at 90,530 */
+    90px 530px 0 0 var(--accent-secondary), 91px 530px 0 0 var(--accent-secondary),
+    92px 530px 0 0 var(--accent-secondary), 93px 530px 0 0 var(--accent-secondary),
+    94px 530px 0 0 var(--accent-secondary), 95px 530px 0 0 var(--accent-secondary),
+    96px 530px 0 0 var(--accent-secondary), 97px 530px 0 0 var(--accent-secondary),
+    90px 531px 0 0 var(--accent-secondary), 97px 531px 0 0 var(--accent-secondary),
+    90px 532px 0 0 var(--accent-secondary), 97px 532px 0 0 var(--accent-secondary),
+    90px 533px 0 0 var(--accent-secondary), 97px 533px 0 0 var(--accent-secondary),
+    90px 534px 0 0 var(--accent-secondary), 97px 534px 0 0 var(--accent-secondary),
+    90px 535px 0 0 var(--accent-secondary), 97px 535px 0 0 var(--accent-secondary),
+    90px 536px 0 0 var(--accent-secondary), 97px 536px 0 0 var(--accent-secondary),
+    90px 537px 0 0 var(--accent-secondary), 97px 537px 0 0 var(--accent-secondary),
+    91px 537px 0 0 var(--accent-secondary), 92px 537px 0 0 var(--accent-secondary),
+    93px 537px 0 0 var(--accent-secondary), 94px 537px 0 0 var(--accent-secondary),
+    95px 537px 0 0 var(--accent-secondary), 96px 537px 0 0 var(--accent-secondary);
+}
+
+.pixel-bg-layer::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 0;
+  animation: px-drift-slow 16s ease-in-out infinite;
+  box-shadow:
+    /* small pixel diamonds (rotated square feel via single dot clusters) */
+    /* diamond at 1750,250 */
+    1750px 248px 0 0 var(--accent-secondary),
+    1748px 250px 0 0 var(--accent-secondary), 1749px 250px 0 0 var(--accent-secondary),
+    1750px 250px 0 0 var(--accent-secondary), 1751px 250px 0 0 var(--accent-secondary), 1752px 250px 0 0 var(--accent-secondary),
+    1748px 251px 0 0 var(--accent-secondary), 1749px 251px 0 0 var(--accent-secondary),
+    1750px 251px 0 0 var(--accent-secondary), 1751px 251px 0 0 var(--accent-secondary), 1752px 251px 0 0 var(--accent-secondary),
+    1749px 252px 0 0 var(--accent-secondary), 1750px 252px 0 0 var(--accent-secondary), 1751px 252px 0 0 var(--accent-secondary),
+    1750px 253px 0 0 var(--accent-secondary),
+    /* diamond at 380,380 */
+    380px 376px 0 0 var(--accent-primary),
+    378px 378px 0 0 var(--accent-primary), 379px 378px 0 0 var(--accent-primary),
+    380px 378px 0 0 var(--accent-primary), 381px 378px 0 0 var(--accent-primary), 382px 378px 0 0 var(--accent-primary),
+    377px 380px 0 0 var(--accent-primary), 378px 380px 0 0 var(--accent-primary),
+    379px 380px 0 0 var(--accent-primary), 380px 380px 0 0 var(--accent-primary),
+    381px 380px 0 0 var(--accent-primary), 382px 380px 0 0 var(--accent-primary), 383px 380px 0 0 var(--accent-primary),
+    378px 382px 0 0 var(--accent-primary), 379px 382px 0 0 var(--accent-primary),
+    380px 382px 0 0 var(--accent-primary), 381px 382px 0 0 var(--accent-primary), 382px 382px 0 0 var(--accent-primary),
+    379px 384px 0 0 var(--accent-primary), 380px 384px 0 0 var(--accent-primary), 381px 384px 0 0 var(--accent-primary),
+    380px 386px 0 0 var(--accent-primary),
+    /* extra scattered squares */
+    700px 150px 0 3px var(--accent-primary),
+    1500px 90px 0 2px var(--accent-secondary),
+    250px 470px 0 4px var(--accent-primary),
+    1650px 540px 0 3px var(--accent-secondary),
+    950px 620px 0 2px var(--accent-primary),
+    60px 730px 0 4px var(--accent-secondary),
+    1250px 750px 0 3px var(--accent-primary),
+    1900px 600px 0 2px var(--accent-secondary),
+    /* plus signs (+) at strategic spots */
+    /* + at 550,160 */
+    550px 158px 0 0 var(--accent-secondary),
+    550px 159px 0 0 var(--accent-secondary),
+    548px 160px 0 0 var(--accent-secondary), 549px 160px 0 0 var(--accent-secondary),
+    550px 160px 0 0 var(--accent-secondary),
+    551px 160px 0 0 var(--accent-secondary), 552px 160px 0 0 var(--accent-secondary),
+    550px 161px 0 0 var(--accent-secondary),
+    550px 162px 0 0 var(--accent-secondary),
+    /* + at 1200,500 */
+    1200px 498px 0 0 var(--accent-primary),
+    1200px 499px 0 0 var(--accent-primary),
+    1198px 500px 0 0 var(--accent-primary), 1199px 500px 0 0 var(--accent-primary),
+    1200px 500px 0 0 var(--accent-primary),
+    1201px 500px 0 0 var(--accent-primary), 1202px 500px 0 0 var(--accent-primary),
+    1200px 501px 0 0 var(--accent-primary),
+    1200px 502px 0 0 var(--accent-primary),
+    /* + at 1780,440 */
+    1780px 438px 0 0 var(--accent-secondary),
+    1780px 439px 0 0 var(--accent-secondary),
+    1778px 440px 0 0 var(--accent-secondary), 1779px 440px 0 0 var(--accent-secondary),
+    1780px 440px 0 0 var(--accent-secondary),
+    1781px 440px 0 0 var(--accent-secondary), 1782px 440px 0 0 var(--accent-secondary),
+    1780px 441px 0 0 var(--accent-secondary),
+    1780px 442px 0 0 var(--accent-secondary);
 }
 
 /* ========================== */
@@ -181,11 +459,11 @@ body {
 }
 
 .pixel-section {
-  background-color: var(--bg-primary);
+  background-color: transparent;
 }
 
 .pixel-section-alt {
-  background-color: var(--bg-secondary);
+  background-color: transparent;
 }
 
 .section-prefix {
