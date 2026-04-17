@@ -55,7 +55,27 @@
         </div>
       </div>
 
-      <!-- Entry 3: Rata Cueva — odd → LEFT -->
+      <!-- Entry 3: AIVISION — odd → LEFT -->
+      <div class="timeline-event">
+        <div class="timeline-event__card pixel-card p-6">
+          <h3 class="font-pixel text-sm sm:text-base leading-loose" style="color: var(--accent-primary);">
+            {{ t('experience.aivision.title') }}
+          </h3>
+          <p class="mt-2 font-retro text-lg" style="color: var(--accent-secondary);">
+            {{ t('experience.aivision.date') }}
+          </p>
+          <div [class.expanded]="expandedId === 'aivision'" class="timeline-event__desc">
+            <p class="font-retro text-xl" style="color: var(--text-base); opacity: 0.85;">
+              {{ t('experience.aivision.description') }}
+            </p>
+          </div>
+          <button class="timeline-read-more mt-4" (click)="toggle('aivision')">
+            {{ expandedId === 'aivision' ? t('experience.readLess') : t('experience.readMore') }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Entry 4: Rata Cueva — even → RIGHT -->
       <div class="timeline-event">
         <div class="timeline-event__card pixel-card p-6">
           <h3 class="font-pixel text-sm sm:text-base leading-loose" style="color: var(--accent-primary);">
@@ -71,6 +91,66 @@
           </div>
           <button class="timeline-read-more mt-4" (click)="toggle('rataCueva')">
             {{ expandedId === 'rataCueva' ? t('experience.readLess') : t('experience.readMore') }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Entry 5: PuntoFiel — odd → LEFT -->
+      <div class="timeline-event">
+        <div class="timeline-event__card pixel-card p-6">
+          <h3 class="font-pixel text-sm sm:text-base leading-loose" style="color: var(--accent-primary);">
+            {{ t('experience.puntoFuel.title') }}
+          </h3>
+          <p class="mt-2 font-retro text-lg" style="color: var(--accent-secondary);">
+            {{ t('experience.puntoFuel.date') }}
+          </p>
+          <div [class.expanded]="expandedId === 'puntoFuel'" class="timeline-event__desc">
+            <p class="font-retro text-xl" style="color: var(--text-base); opacity: 0.85;">
+              {{ t('experience.puntoFuel.description') }}
+            </p>
+          </div>
+          <button class="timeline-read-more mt-4" (click)="toggle('puntoFuel')">
+            {{ expandedId === 'puntoFuel' ? t('experience.readLess') : t('experience.readMore') }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Entry 6: Sarex Estadía — even → RIGHT -->
+      <div class="timeline-event">
+        <div class="timeline-event__card pixel-card p-6">
+          <h3 class="font-pixel text-sm sm:text-base leading-loose" style="color: var(--accent-primary);">
+            {{ t('experience.sarexEstadia.title') }}
+          </h3>
+          <p class="mt-2 font-retro text-lg" style="color: var(--accent-secondary);">
+            {{ t('experience.sarexEstadia.date') }}
+          </p>
+          <div [class.expanded]="expandedId === 'sarexEstadia'" class="timeline-event__desc">
+            <p class="font-retro text-xl" style="color: var(--text-base); opacity: 0.85;">
+              {{ t('experience.sarexEstadia.description') }}
+            </p>
+          </div>
+          <button class="timeline-read-more mt-4" (click)="toggle('sarexEstadia')">
+            {{ expandedId === 'sarexEstadia' ? t('experience.readLess') : t('experience.readMore') }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Entry 7: Sarex Becario — odd → LEFT (ongoing) -->
+      <div class="timeline-event">
+        <div class="timeline-event__card pixel-card p-6">
+          <h3 class="font-pixel text-sm sm:text-base leading-loose" style="color: var(--accent-primary);">
+            {{ t('experience.sarexBecario.title') }}
+          </h3>
+          <p class="mt-2 font-retro text-lg" style="color: var(--accent-secondary);">
+            {{ t('experience.sarexBecario.date') }}
+          </p>
+          <div [class.expanded]="expandedId === 'sarexBecario'" class="timeline-event__desc">
+            <p class="font-retro text-xl" style="color: var(--text-base); opacity: 0.85;">
+              {{ t('experience.sarexBecario.description') }}
+            </p>
+          </div>
+          <button class="timeline-read-more mt-4" (click)="toggle('sarexBecario')">
+            {{ expandedId === 'sarexBecario' ? t('experience.readLess') : t('experience.readMore') }}
           </button>
         </div>
       </div>

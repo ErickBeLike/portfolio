@@ -39,6 +39,26 @@
       "date": "Mayo 2025 - Agosto 2025",
       "description": "Desarrollo de un e-commerce gaming, simulando el rol dual de desarrollador y cliente para fortalecer habilidades de comunicación, levantamiento de requerimientos y pensamiento de producto."
     },
+    "aivision": {
+      "title": "Proyecto Integrador: AIVISION",
+      "date": "Enero 2025 - Abril 2025",
+      "description": "Desarrollo de un software para el entorno de la salud oftalmológica orientado a la detección temprana y seguimiento del glaucoma. Solución diseñada para apoyar flujos clínicos en un contexto médico especializado."
+    },
+    "puntoFuel": {
+      "title": "Proyecto Académico: PuntoFiel",
+      "date": "Septiembre 2025 - Diciembre 2025",
+      "description": "Digitalización de comercios locales mediante gamificación. La plataforma incentiva la lealtad y participación del cliente transformando las interacciones comerciales cotidianas en experiencias tipo juego."
+    },
+    "sarexEstadia": {
+      "title": "Stadía Profesional: Sarex Enterprise Limited",
+      "date": "Enero 2026 - Abril 2026",
+      "description": "Reingeniería completa de una plataforma inmobiliaria argentina vía web scraping. Desarrollo de un bot con Java Spring Boot y Selenium WebDriver para migrar y automatizar la extracción de datos del sistema legado."
+    },
+    "sarexBecario": {
+      "title": "Becario Backend: Sarex Enterprise Limited",
+      "date": "Abril 2026 - Actualidad",
+      "description": "Desarrollo backend enfocado en la creación de APIs RESTful y microservicios con Spring Boot bajo metodologías ágiles. Contribuyendo a la evolución de los servicios centrales de la plataforma en un entorno profesional."
+    },
     "wip": "[ PUNTO DE GUARDADO ] — Nuevas misiones cargando, aventurero...",
     "readMore": "Leer más",
     "readLess": "Leer menos"

@@ -39,6 +39,26 @@
       "date": "May 2025 - August 2025",
       "description": "Collaborative development of a gaming e-commerce, simulating the dual role of developer and client to strengthen skills in communication, requirements gathering, and product-oriented thinking."
     },
+    "aivision": {
+      "title": "Capstone Project: AIVISION",
+      "date": "January 2025 - April 2025",
+      "description": "Development of ophthalmological health software for the early detection and monitoring of glaucoma. Built to support clinical workflows and provide practitioners with a reliable diagnostic tool."
+    },
+    "puntoFuel": {
+      "title": "Academic Project: PuntoFiel",
+      "date": "September 2025 - December 2025",
+      "description": "Digitalization of local businesses through gamification. The platform encourages customer loyalty and engagement by turning everyday commerce interactions into game-like experiences."
+    },
+    "sarexEstadia": {
+      "title": "Professional Internship: Sarex Enterprise Limited",
+      "date": "January 2026 - April 2026",
+      "description": "Complete re-engineering of an Argentine real estate platform via web scraping. Built a Java Spring Boot bot using Selenium WebDriver to fully migrate and automate data extraction and processing from the legacy system."
+    },
+    "sarexBecario": {
+      "title": "Backend Developer Intern: Sarex Enterprise Limited",
+      "date": "April 2026 - Present",
+      "description": "Backend development focused on building RESTful APIs and microservices with Spring Boot under agile methodologies. Contributing to the evolution of the platform's core services in a professional team environment."
+    },
     "wip": "[ SAVE POINT ] — New quests loading, adventurer...",
     "readMore": "Read more",
     "readLess": "Read less"
