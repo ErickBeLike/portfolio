@@ -25,37 +25,42 @@
     "titlePart1": "Mi",
     "titlePart2": "Experiencia",
     "suitesCenter": {
-      "title": "Estadía Profesional: Suites Center",
+      "title": "[TSU] Stadía Profesional: Suites Center",
       "date": "Septiembre 2023 - Diciembre 2023",
       "description": "Experiencia de egreso para TSU. Desarrollo full-stack de una aplicación web administrativa y landing page, aplicando conocimientos en un entorno profesional para cumplir con requerimientos reales de negocio."
     },
     "sitie": {
-      "title": "Proyecto Integrador Empresarial: SITIE",
+      "title": "[TSU] Proyecto Integrador Empresarial: SITIE",
       "date": "Enero 2022 - Abril 2022",
       "description": "Colaboración directa con una empresa para desarrollar un sistema de reventa de servicios de internet. Se trabajó desde el levantamiento de requerimientos hasta la entrega de una solución funcional."
     },
     "rataCueva": {
-      "title": "Proyecto Académico: Rata Cueva",
+      "title": "[ING] Proyecto Académico: Rata Cueva",
       "date": "Mayo 2025 - Agosto 2025",
       "description": "Desarrollo de un e-commerce gaming, simulando el rol dual de desarrollador y cliente para fortalecer habilidades de comunicación, levantamiento de requerimientos y pensamiento de producto."
     },
     "aivision": {
-      "title": "Proyecto Integrador: AIVISION",
+      "title": "[ING] Proyecto Integrador: AIVISION",
       "date": "Enero 2025 - Abril 2025",
       "description": "Desarrollo de un software para el entorno de la salud oftalmológica orientado a la detección temprana y seguimiento del glaucoma. Solución diseñada para apoyar flujos clínicos en un contexto médico especializado."
     },
     "puntoFuel": {
-      "title": "Proyecto Académico: PuntoFiel",
+      "title": "[ING] Proyecto Académico: PuntoFiel",
       "date": "Septiembre 2025 - Diciembre 2025",
       "description": "Digitalización de comercios locales mediante gamificación. La plataforma incentiva la lealtad y participación del cliente transformando las interacciones comerciales cotidianas en experiencias tipo juego."
     },
+    "talentHackathon": {
+      "title": "Talent Hackathon — Colaborador",
+      "date": "Abril 2026",
+      "description": "Seleccionado para participar en el Talent Hackathon en Talent Land México (Expo Santa Fe), parte del innovation challenge Genius Arena. Competencia contrarreloj en el track de Grupo Salinas – Banco Azteca, desarrollando soluciones a problemáticas sociales, tecnológicas y sostenibles con el acompañamiento de mentores expertos del sector público y privado."
+    },
     "sarexEstadia": {
-      "title": "Stadía Profesional: Sarex Enterprise Limited",
+      "title": "[ING] Stadía Profesional: Sarex Enterprise Limited",
       "date": "Enero 2026 - Abril 2026",
       "description": "Reingeniería completa de una plataforma inmobiliaria argentina vía web scraping. Desarrollo de un bot con Java Spring Boot y Selenium WebDriver para migrar y automatizar la extracción de datos del sistema legado."
     },
     "sarexBecario": {
-      "title": "Becario Backend: Sarex Enterprise Limited",
+      "title": "[ING] Becario Backend: Sarex Enterprise Limited",
       "date": "Abril 2026 - Actualidad",
       "description": "Desarrollo backend enfocado en la creación de APIs RESTful y microservicios con Spring Boot bajo metodologías ágiles. Contribuyendo a la evolución de los servicios centrales de la plataforma en un entorno profesional."
     },
@@ -89,6 +94,7 @@
     "titlePart1": "Mis",
     "titlePart2": "Proyectos",
     "statusFinished": "Finalizado",
+    "statusFinishedQ": "Finalizado (?)",
     "statusInProgress": "En Progreso",
     "suitesCenter": {
       "description": "Aplicación web administrativa para la gestión de rentas, habitaciones, huéspedes y ventas de un hotel, incluyendo una landing page promocional."
@@ -102,9 +108,19 @@
     "shopIn": {
       "description": "E-commerce de catálogo general con planes de evolucionar a marketplace, integrando pasarelas de pago e IA para recomendaciones."
     },
+    "puntoFiel": {
+      "description": "Plataforma de fidelización que digitaliza negocios locales a través de la gamificación, convirtiendo las interacciones cotidianas de comercio en experiencias lúdicas para fomentar la retención de clientes."
+    },
+    "azkali": {
+      "description": "Proyecto de hackathon para el track de Grupo Salinas – Banco Azteca en Talent Land México. Solución fintech desarrollada contra reloj, enfocada en inclusión financiera y servicios digitales."
+    },
+    "aivision": {
+      "description": "Software de salud oftalmológica para la detección temprana y el seguimiento del glaucoma, diseñado para apoyar flujos de trabajo clínicos y proporcionar una herramienta diagnóstica confiable."
+    },
     "backendRepo": "Repo Backend",
     "frontendRepo": "Repo Frontend",
-    "viewDemo": "Ver Demo"
+    "viewDemo": "Ver Demo",
+    "learnMore": "Conocer más"
   },
   "about": {
     "title": "Sobre mí",

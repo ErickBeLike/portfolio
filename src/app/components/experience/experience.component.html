@@ -115,7 +115,27 @@
         </div>
       </div>
 
-      <!-- Entry 6: Sarex Estadía — even → RIGHT -->
+      <!-- Entry 6: Talent Hackathon — even → RIGHT -->
+      <div class="timeline-event">
+        <div class="timeline-event__card pixel-card p-6">
+          <h3 class="font-pixel text-sm sm:text-base leading-loose" style="color: var(--accent-primary);">
+            {{ t('experience.talentHackathon.title') }}
+          </h3>
+          <p class="mt-2 font-retro text-lg" style="color: var(--accent-secondary);">
+            {{ t('experience.talentHackathon.date') }}
+          </p>
+          <div [class.expanded]="expandedId === 'talentHackathon'" class="timeline-event__desc">
+            <p class="font-retro text-xl" style="color: var(--text-base); opacity: 0.85;">
+              {{ t('experience.talentHackathon.description') }}
+            </p>
+          </div>
+          <button class="timeline-read-more mt-4" (click)="toggle('talentHackathon')">
+            {{ expandedId === 'talentHackathon' ? t('experience.readLess') : t('experience.readMore') }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Entry 7: Sarex Estadía — odd → LEFT -->
       <div class="timeline-event">
         <div class="timeline-event__card pixel-card p-6">
           <h3 class="font-pixel text-sm sm:text-base leading-loose" style="color: var(--accent-primary);">
@@ -135,7 +155,7 @@
         </div>
       </div>
 
-      <!-- Entry 7: Sarex Becario — odd → LEFT (ongoing) -->
+      <!-- Entry 8: Sarex Becario — even → RIGHT (ongoing) -->
       <div class="timeline-event">
         <div class="timeline-event__card pixel-card p-6">
           <h3 class="font-pixel text-sm sm:text-base leading-loose" style="color: var(--accent-primary);">

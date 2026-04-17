@@ -25,37 +25,42 @@
     "titlePart1": "My",
     "titlePart2": "Experience",
     "suitesCenter": {
-      "title": "Professional Internship: Suites Center",
+      "title": "[TSU] Professional Internship: Suites Center",
       "date": "September 2023 - December 2023",
       "description": "Graduation requirement for my Associate's Degree (TSU). Full-stack development of an administrative web application and a promotional landing page, applying academic knowledge in a real-world environment to meet business requirements."
     },
     "sitie": {
-      "title": "Capstone Business Project: SITIE",
+      "title": "[TSU] Capstone Business Project: SITIE",
       "date": "January 2022 - April 2022",
       "description": "Direct collaboration with a company to develop an internet service resale system. The project involved working from requirements gathering to the delivery of a functional solution tailored to their operational needs."
     },
     "rataCueva": {
-      "title": "Academic Project: Rata Cueva",
+      "title": "[ING] Academic Project: Rata Cueva",
       "date": "May 2025 - August 2025",
       "description": "Collaborative development of a gaming e-commerce, simulating the dual role of developer and client to strengthen skills in communication, requirements gathering, and product-oriented thinking."
     },
     "aivision": {
-      "title": "Capstone Project: AIVISION",
+      "title": "[ING] Capstone Project: AIVISION",
       "date": "January 2025 - April 2025",
       "description": "Development of ophthalmological health software for the early detection and monitoring of glaucoma. Built to support clinical workflows and provide practitioners with a reliable diagnostic tool."
     },
     "puntoFuel": {
-      "title": "Academic Project: PuntoFiel",
+      "title": "[ING] Academic Project: PuntoFiel",
       "date": "September 2025 - December 2025",
       "description": "Digitalization of local businesses through gamification. The platform encourages customer loyalty and engagement by turning everyday commerce interactions into game-like experiences."
     },
+    "talentHackathon": {
+      "title": "Talent Hackathon — Collaborator",
+      "date": "April 2026",
+      "description": "Selected to participate in Talent Hackathon at Talent Land México (Expo Santa Fe), part of the Genius Arena innovation challenge. Competed in the Grupo Salinas – Banco Azteca track, working under time pressure to develop solutions to social, technological, and sustainability challenges, guided by expert mentors from both public and private sectors."
+    },
     "sarexEstadia": {
-      "title": "Professional Internship: Sarex Enterprise Limited",
+      "title": "[ING] Professional Internship: Sarex Enterprise Limited",
       "date": "January 2026 - April 2026",
       "description": "Complete re-engineering of an Argentine real estate platform via web scraping. Built a Java Spring Boot bot using Selenium WebDriver to fully migrate and automate data extraction and processing from the legacy system."
     },
     "sarexBecario": {
-      "title": "Backend Developer Intern: Sarex Enterprise Limited",
+      "title": "[ING] Backend Developer Intern: Sarex Enterprise Limited",
       "date": "April 2026 - Present",
       "description": "Backend development focused on building RESTful APIs and microservices with Spring Boot under agile methodologies. Contributing to the evolution of the platform's core services in a professional team environment."
     },
@@ -89,6 +94,7 @@
     "titlePart1": "My",
     "titlePart2": "Projects",
     "statusFinished": "Finished",
+    "statusFinishedQ": "Finished (?)",
     "statusInProgress": "In Progress",
     "suitesCenter": {
       "description": "An administrative web application for managing rentals, rooms, guests, and sales for a hotel, including a promotional landing page."
@@ -102,9 +108,19 @@
     "shopIn": {
       "description": "A general catalog e-commerce with plans to evolve into a marketplace, integrating payment gateways and AI for recommendations."
     },
+    "puntoFiel": {
+      "description": "A loyalty platform that digitizes local businesses through gamification, turning everyday commerce interactions into game-like experiences to encourage customer engagement and retention."
+    },
+    "azkali": {
+      "description": "Hackathon project for the Grupo Salinas – Banco Azteca track at Talent Land México. A fintech-oriented solution developed under time pressure, focused on financial inclusion and digital services."
+    },
+    "aivision": {
+      "description": "Ophthalmological health software for the early detection and monitoring of glaucoma, built to support clinical workflows and provide practitioners with a reliable diagnostic tool."
+    },
     "backendRepo": "Backend Repo",
     "frontendRepo": "Frontend Repo",
-    "viewDemo": "View Demo"
+    "viewDemo": "View Demo",
+    "learnMore": "Learn more"
   },
   "about": {
     "title": "About me",
