@@ -72,6 +72,7 @@ body::after {
   position: fixed;
   width: 1px;
   height: 1px;
+  background: transparent;
   top: 0;
   left: 0;
   pointer-events: none;
@@ -79,18 +80,17 @@ body::after {
 }
 
 @keyframes px-float-a {
-  0%   { transform: translateY(0px); opacity: 0.2; }
-  50%  { transform: translateY(-14px); opacity: 0.32; }
-  100% { transform: translateY(0px); opacity: 0.2; }
+  0%, 100% { opacity: 0.2; }
+  50%       { opacity: 0.32; }
 }
 
 @keyframes px-float-b {
-  0%   { transform: translateY(0px); opacity: 0.13; }
-  50%  { transform: translateY(10px); opacity: 0.22; }
-  100% { transform: translateY(0px); opacity: 0.13; }
+  0%, 100% { opacity: 0.13; }
+  50%       { opacity: 0.22; }
 }
 
 body::before {
+  transform: translateY(var(--px-a-y, 0px));
   animation: px-float-a 8s ease-in-out infinite;
   box-shadow:
     50px 40px 0 3px var(--accent-primary),
@@ -131,6 +131,7 @@ body::before {
 }
 
 body::after {
+  transform: translateY(var(--px-b-y, 0px));
   animation: px-float-b 11s ease-in-out infinite;
   box-shadow:
     130px 60px 0 3px var(--accent-secondary),
@@ -165,15 +166,13 @@ body::after {
 }
 
 @keyframes px-drift {
-  0%   { transform: translateY(0px) rotate(0deg); opacity: 0.18; }
-  50%  { transform: translateY(-18px) rotate(0deg); opacity: 0.28; }
-  100% { transform: translateY(0px) rotate(0deg); opacity: 0.18; }
+  0%, 100% { opacity: 0.18; }
+  50%       { opacity: 0.28; }
 }
 
 @keyframes px-drift-slow {
-  0%   { transform: translateY(0px); opacity: 0.12; }
-  50%  { transform: translateY(12px); opacity: 0.2; }
-  100% { transform: translateY(0px); opacity: 0.12; }
+  0%, 100% { opacity: 0.12; }
+  50%       { opacity: 0.2; }
 }
 
 /* Pixel cross shape using ::before + ::after */
@@ -182,10 +181,11 @@ body::after {
   position: absolute;
   width: 1px;
   height: 1px;
+  background: transparent;
   top: 0;
   left: 0;
   animation: px-drift 13s ease-in-out infinite;
-  /* Crosses: built from 2 overlapping rect shadows */
+  transform: translateY(var(--px-c-y, 0px));
   box-shadow:
     /* cross at 240,120 */
     238px 120px 0 1px var(--accent-primary),
@@ -267,7 +267,69 @@ body::after {
     90px 537px 0 0 var(--accent-secondary), 97px 537px 0 0 var(--accent-secondary),
     91px 537px 0 0 var(--accent-secondary), 92px 537px 0 0 var(--accent-secondary),
     93px 537px 0 0 var(--accent-secondary), 94px 537px 0 0 var(--accent-secondary),
-    95px 537px 0 0 var(--accent-secondary), 96px 537px 0 0 var(--accent-secondary);
+    95px 537px 0 0 var(--accent-secondary), 96px 537px 0 0 var(--accent-secondary),
+    /* cross at 920,250 */
+    918px 250px 0 1px var(--accent-primary), 919px 250px 0 1px var(--accent-primary),
+    920px 248px 0 1px var(--accent-primary), 920px 249px 0 1px var(--accent-primary),
+    920px 250px 0 1px var(--accent-primary), 920px 251px 0 1px var(--accent-primary),
+    920px 252px 0 1px var(--accent-primary), 921px 250px 0 1px var(--accent-primary),
+    922px 250px 0 1px var(--accent-primary),
+    /* cross at 1600,600 */
+    1598px 600px 0 1px var(--accent-secondary), 1599px 600px 0 1px var(--accent-secondary),
+    1600px 598px 0 1px var(--accent-secondary), 1600px 599px 0 1px var(--accent-secondary),
+    1600px 600px 0 1px var(--accent-secondary), 1600px 601px 0 1px var(--accent-secondary),
+    1600px 602px 0 1px var(--accent-secondary), 1601px 600px 0 1px var(--accent-secondary),
+    1602px 600px 0 1px var(--accent-secondary),
+    /* cross at 130,160 */
+    128px 160px 0 1px var(--accent-secondary), 129px 160px 0 1px var(--accent-secondary),
+    130px 158px 0 1px var(--accent-secondary), 130px 159px 0 1px var(--accent-secondary),
+    130px 160px 0 1px var(--accent-secondary), 130px 161px 0 1px var(--accent-secondary),
+    130px 162px 0 1px var(--accent-secondary), 131px 160px 0 1px var(--accent-secondary),
+    132px 160px 0 1px var(--accent-secondary),
+    /* hollow square at 1000,320 */
+    1000px 320px 0 0 var(--accent-primary), 1001px 320px 0 0 var(--accent-primary),
+    1002px 320px 0 0 var(--accent-primary), 1003px 320px 0 0 var(--accent-primary),
+    1004px 320px 0 0 var(--accent-primary), 1005px 320px 0 0 var(--accent-primary),
+    1006px 320px 0 0 var(--accent-primary), 1007px 320px 0 0 var(--accent-primary),
+    1000px 321px 0 0 var(--accent-primary), 1007px 321px 0 0 var(--accent-primary),
+    1000px 322px 0 0 var(--accent-primary), 1007px 322px 0 0 var(--accent-primary),
+    1000px 323px 0 0 var(--accent-primary), 1007px 323px 0 0 var(--accent-primary),
+    1000px 324px 0 0 var(--accent-primary), 1007px 324px 0 0 var(--accent-primary),
+    1000px 325px 0 0 var(--accent-primary), 1007px 325px 0 0 var(--accent-primary),
+    1000px 326px 0 0 var(--accent-primary), 1007px 326px 0 0 var(--accent-primary),
+    1000px 327px 0 0 var(--accent-primary), 1007px 327px 0 0 var(--accent-primary),
+    1001px 327px 0 0 var(--accent-primary), 1002px 327px 0 0 var(--accent-primary),
+    1003px 327px 0 0 var(--accent-primary), 1004px 327px 0 0 var(--accent-primary),
+    1005px 327px 0 0 var(--accent-primary), 1006px 327px 0 0 var(--accent-primary),
+    /* hollow square at 680,580 */
+    680px 580px 0 0 var(--accent-secondary), 681px 580px 0 0 var(--accent-secondary),
+    682px 580px 0 0 var(--accent-secondary), 683px 580px 0 0 var(--accent-secondary),
+    684px 580px 0 0 var(--accent-secondary), 685px 580px 0 0 var(--accent-secondary),
+    686px 580px 0 0 var(--accent-secondary), 687px 580px 0 0 var(--accent-secondary),
+    680px 581px 0 0 var(--accent-secondary), 687px 581px 0 0 var(--accent-secondary),
+    680px 582px 0 0 var(--accent-secondary), 687px 582px 0 0 var(--accent-secondary),
+    680px 583px 0 0 var(--accent-secondary), 687px 583px 0 0 var(--accent-secondary),
+    680px 584px 0 0 var(--accent-secondary), 687px 584px 0 0 var(--accent-secondary),
+    680px 585px 0 0 var(--accent-secondary), 687px 585px 0 0 var(--accent-secondary),
+    680px 586px 0 0 var(--accent-secondary), 687px 586px 0 0 var(--accent-secondary),
+    680px 587px 0 0 var(--accent-secondary), 687px 587px 0 0 var(--accent-secondary),
+    681px 587px 0 0 var(--accent-secondary), 682px 587px 0 0 var(--accent-secondary),
+    683px 587px 0 0 var(--accent-secondary), 684px 587px 0 0 var(--accent-secondary),
+    685px 587px 0 0 var(--accent-secondary), 686px 587px 0 0 var(--accent-secondary),
+    /* pixel circle at 1100,160 r=5 */
+    1100px 155px 0 0 var(--accent-secondary), 1100px 165px 0 0 var(--accent-secondary),
+    1095px 160px 0 0 var(--accent-secondary), 1105px 160px 0 0 var(--accent-secondary),
+    1097px 156px 0 0 var(--accent-secondary), 1103px 156px 0 0 var(--accent-secondary),
+    1096px 157px 0 0 var(--accent-secondary), 1104px 157px 0 0 var(--accent-secondary),
+    1096px 163px 0 0 var(--accent-secondary), 1104px 163px 0 0 var(--accent-secondary),
+    1097px 164px 0 0 var(--accent-secondary), 1103px 164px 0 0 var(--accent-secondary),
+    /* pixel circle at 480,420 r=5 */
+    480px 415px 0 0 var(--accent-primary), 480px 425px 0 0 var(--accent-primary),
+    475px 420px 0 0 var(--accent-primary), 485px 420px 0 0 var(--accent-primary),
+    477px 416px 0 0 var(--accent-primary), 483px 416px 0 0 var(--accent-primary),
+    476px 417px 0 0 var(--accent-primary), 484px 417px 0 0 var(--accent-primary),
+    476px 423px 0 0 var(--accent-primary), 484px 423px 0 0 var(--accent-primary),
+    477px 424px 0 0 var(--accent-primary), 483px 424px 0 0 var(--accent-primary);
 }
 
 .pixel-bg-layer::after {
@@ -275,9 +337,11 @@ body::after {
   position: absolute;
   width: 1px;
   height: 1px;
+  background: transparent;
   top: 0;
   left: 0;
   animation: px-drift-slow 16s ease-in-out infinite;
+  transform: translateY(var(--px-d-y, 0px));
   box-shadow:
     /* small pixel diamonds (rotated square feel via single dot clusters) */
     /* diamond at 1750,250 */
@@ -332,7 +396,59 @@ body::after {
     1780px 440px 0 0 var(--accent-secondary),
     1781px 440px 0 0 var(--accent-secondary), 1782px 440px 0 0 var(--accent-secondary),
     1780px 441px 0 0 var(--accent-secondary),
-    1780px 442px 0 0 var(--accent-secondary);
+    1780px 442px 0 0 var(--accent-secondary),
+    /* diamond at 900,130 r=3 */
+    900px 127px 0 0 var(--accent-primary),
+    899px 128px 0 0 var(--accent-primary), 901px 128px 0 0 var(--accent-primary),
+    898px 129px 0 0 var(--accent-primary), 902px 129px 0 0 var(--accent-primary),
+    897px 130px 0 0 var(--accent-primary), 903px 130px 0 0 var(--accent-primary),
+    898px 131px 0 0 var(--accent-primary), 902px 131px 0 0 var(--accent-primary),
+    899px 132px 0 0 var(--accent-primary), 901px 132px 0 0 var(--accent-primary),
+    900px 133px 0 0 var(--accent-primary),
+    /* diamond at 1300,590 r=3 */
+    1300px 587px 0 0 var(--accent-secondary),
+    1299px 588px 0 0 var(--accent-secondary), 1301px 588px 0 0 var(--accent-secondary),
+    1298px 589px 0 0 var(--accent-secondary), 1302px 589px 0 0 var(--accent-secondary),
+    1297px 590px 0 0 var(--accent-secondary), 1303px 590px 0 0 var(--accent-secondary),
+    1298px 591px 0 0 var(--accent-secondary), 1302px 591px 0 0 var(--accent-secondary),
+    1299px 592px 0 0 var(--accent-secondary), 1301px 592px 0 0 var(--accent-secondary),
+    1300px 593px 0 0 var(--accent-secondary),
+    /* diamond at 600,280 r=3 */
+    600px 277px 0 0 var(--accent-primary),
+    599px 278px 0 0 var(--accent-primary), 601px 278px 0 0 var(--accent-primary),
+    598px 279px 0 0 var(--accent-primary), 602px 279px 0 0 var(--accent-primary),
+    597px 280px 0 0 var(--accent-primary), 603px 280px 0 0 var(--accent-primary),
+    598px 281px 0 0 var(--accent-primary), 602px 281px 0 0 var(--accent-primary),
+    599px 282px 0 0 var(--accent-primary), 601px 282px 0 0 var(--accent-primary),
+    600px 283px 0 0 var(--accent-primary),
+    /* pixel circle at 1680,380 r=5 */
+    1680px 375px 0 0 var(--accent-primary), 1680px 385px 0 0 var(--accent-primary),
+    1675px 380px 0 0 var(--accent-primary), 1685px 380px 0 0 var(--accent-primary),
+    1677px 376px 0 0 var(--accent-primary), 1683px 376px 0 0 var(--accent-primary),
+    1676px 377px 0 0 var(--accent-primary), 1684px 377px 0 0 var(--accent-primary),
+    1676px 383px 0 0 var(--accent-primary), 1684px 383px 0 0 var(--accent-primary),
+    1677px 384px 0 0 var(--accent-primary), 1683px 384px 0 0 var(--accent-primary),
+    /* pixel circle at 300,700 r=5 */
+    300px 695px 0 0 var(--accent-secondary), 300px 705px 0 0 var(--accent-secondary),
+    295px 700px 0 0 var(--accent-secondary), 305px 700px 0 0 var(--accent-secondary),
+    297px 696px 0 0 var(--accent-secondary), 303px 696px 0 0 var(--accent-secondary),
+    296px 697px 0 0 var(--accent-secondary), 304px 697px 0 0 var(--accent-secondary),
+    296px 703px 0 0 var(--accent-secondary), 304px 703px 0 0 var(--accent-secondary),
+    297px 704px 0 0 var(--accent-secondary), 303px 704px 0 0 var(--accent-secondary),
+    /* pixel circle at 1050,450 r=5 */
+    1050px 445px 0 0 var(--accent-primary), 1050px 455px 0 0 var(--accent-primary),
+    1045px 450px 0 0 var(--accent-primary), 1055px 450px 0 0 var(--accent-primary),
+    1047px 446px 0 0 var(--accent-primary), 1053px 446px 0 0 var(--accent-primary),
+    1046px 447px 0 0 var(--accent-primary), 1054px 447px 0 0 var(--accent-primary),
+    1046px 453px 0 0 var(--accent-primary), 1054px 453px 0 0 var(--accent-primary),
+    1047px 454px 0 0 var(--accent-primary), 1053px 454px 0 0 var(--accent-primary),
+    /* more scattered squares */
+    900px 400px 0 3px var(--accent-secondary),
+    1750px 480px 0 2px var(--accent-primary),
+    400px 200px 0 4px var(--accent-secondary),
+    1150px 300px 0 2px var(--accent-primary),
+    50px 400px 0 3px var(--accent-secondary),
+    1450px 700px 0 4px var(--accent-primary);
 }
 
 /* ========================== */
