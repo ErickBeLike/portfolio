@@ -8,6 +8,9 @@
 
 .timeline {
   position: relative;
+  /* Override any global padding that shifts the center line */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 
   /* Center dashed line */
   &::before {

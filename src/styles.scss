@@ -137,13 +137,14 @@ body {
   &::after {
     content: '★';
     position: absolute;
-    top: -9px;
-    right: -7px;
-    font-size: 0.75rem;
+    top: -13px;
+    right: -10px;
+    font-size: 1.2rem;
     color: #FFD700;
     line-height: 1;
     pointer-events: none;
     font-family: sans-serif;
+    text-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
   }
 }
 
@@ -223,56 +224,4 @@ body {
   animation: spin 2s linear infinite;
 }
 
-/* ========================== */
-/* ===  PIXEL TIMELINE     === */
-/* ========================== */
 
-.timeline {
-  position: relative;
-  padding-left: 2rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: repeating-linear-gradient(
-      to bottom,
-      var(--accent-primary) 0px,
-      var(--accent-primary) 8px,
-      transparent 8px,
-      transparent 16px
-    );
-  }
-}
-
-.timeline-item {
-  position: relative;
-  padding-left: 1.5rem;
-
-  &::before {
-    content: '▶';
-    position: absolute;
-    left: -2.3rem;
-    top: 1rem;
-    color: var(--accent-primary);
-    font-size: 0.75rem;
-    background: var(--bg-primary);
-    padding: 0 2px;
-  }
-}
-
-.timeline-event {
-  border: 3px solid var(--accent-primary);
-  background: var(--bg-secondary);
-  box-shadow: 5px 5px 0 0 var(--accent-primary);
-  padding: 1.25rem 1.5rem;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-
-  &:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 7px 7px 0 0 var(--accent-primary);
-  }
-}
