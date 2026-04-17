@@ -3,6 +3,46 @@
 @tailwind utilities;
 
 /* ========================== */
+/* === ANIMATABLE CSS VARS === */
+/* ========================== */
+
+@property --bg-primary {
+  syntax: '<color>';
+  initial-value: #1A1B26;
+  inherits: true;
+}
+@property --bg-secondary {
+  syntax: '<color>';
+  initial-value: #24283B;
+  inherits: true;
+}
+@property --bg-header {
+  syntax: '<color>';
+  initial-value: #0d0e18;
+  inherits: true;
+}
+@property --bg-footer {
+  syntax: '<color>';
+  initial-value: #0d0e18;
+  inherits: true;
+}
+@property --text-base {
+  syntax: '<color>';
+  initial-value: #C0CAF5;
+  inherits: true;
+}
+@property --accent-primary {
+  syntax: '<color>';
+  initial-value: #42D4F4;
+  inherits: true;
+}
+@property --accent-secondary {
+  syntax: '<color>';
+  initial-value: #9ECE6A;
+  inherits: true;
+}
+
+/* ========================== */
 /* ===   BIOME THEMES      === */
 /* ========================== */
 
@@ -61,7 +101,15 @@ body {
   background-attachment: fixed;
   color: var(--text-base);
   font-family: 'VT323', monospace;
-  transition: color 0.4s ease;
+  transition:
+    --bg-primary       0.6s ease,
+    --bg-secondary     0.6s ease,
+    --bg-header        0.6s ease,
+    --bg-footer        0.6s ease,
+    --text-base        0.6s ease,
+    --accent-primary   0.6s ease,
+    --accent-secondary 0.6s ease,
+    color              0.4s ease;
   position: relative;
 }
 
