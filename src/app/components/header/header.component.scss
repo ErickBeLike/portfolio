@@ -27,6 +27,15 @@ header {
   }
 }
 
+/* Base nav: always has a transparent border so the transition has an explicit start value */
+header nav {
+  border: 3px solid transparent;
+  transition: border-color 0.45s ease, box-shadow 0.45s ease,
+              background-color 0.45s ease, height 0.45s ease,
+              max-width 0.45s ease, margin-top 0.45s ease,
+              padding 0.45s ease;
+}
+
 /* === Pixel Notch (scrolled state) === */
 .pixel-notch {
   max-width: 860px;

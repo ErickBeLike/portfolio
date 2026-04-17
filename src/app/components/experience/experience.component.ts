@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { TranslocoModule } from '@ngneat/transloco'; // <-- IMPORTA
+import { CommonModule } from '@angular/common';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [TranslocoModule], // <-- AÑADE
+  imports: [CommonModule, TranslocoModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {
+  expandedId: string | null = null;
 
+  toggle(id: string): void {
+    this.expandedId = this.expandedId === id ? null : id;
+  }
 }

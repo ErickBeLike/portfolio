@@ -51,23 +51,48 @@
     left: 50%;
     top: 1.5rem;
     transform: translateX(-50%);
-    font-size: 0.9rem;
-    color: var(--accent-primary);
+    font-size: 1.6rem;
+    color: var(--accent-secondary);
     z-index: 2;
     line-height: 1;
     background: var(--bg-primary);
-    padding: 0 3px;
+    padding: 0 4px;
+    filter: drop-shadow(0 0 4px var(--accent-secondary));
 
     @media (max-width: 767px) {
-      left: 8px;
+      left: 4px;
       transform: none;
     }
   }
 
   /* Card */
   .timeline-event__card {
+    position: relative;
     width: calc(50% - 2.75rem);
     z-index: 1;
+  }
+
+  /* Collapsible description — absolute so it doesn't push page height */
+  .timeline-event__desc {
+    position: absolute;
+    top: calc(100% + 3px);
+    left: 0;
+    right: 0;
+    z-index: 30;
+    background: var(--bg-secondary);
+    border: 3px solid var(--accent-primary);
+    box-shadow: 5px 5px 0 0 var(--accent-primary);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 1rem;
+    transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.45s ease;
+
+    &.expanded {
+      max-height: 400px;
+      opacity: 1;
+      padding: 1rem;
+    }
   }
 
   /* ODD → LEFT */
@@ -97,8 +122,35 @@
   }
 }
 
-/* WIP footer */
+/* Read More button */
+.timeline-read-more {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: var(--accent-primary);
+  background: transparent;
+  border: 2px solid var(--accent-primary);
+  box-shadow: 2px 2px 0 0 var(--accent-primary);
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+  &:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 0 var(--accent-primary);
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+}
+
+/* WIP footer — lives outside .timeline so the line never overlaps it */
 .timeline-wip {
   text-align: center;
-  padding-top: 0.5rem;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
 }

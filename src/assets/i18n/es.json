@@ -39,7 +39,9 @@
       "date": "Mayo 2025 - Agosto 2025",
       "description": "Desarrollo de un e-commerce gaming, simulando el rol dual de desarrollador y cliente para fortalecer habilidades de comunicación, levantamiento de requerimientos y pensamiento de producto."
     },
-    "wip": "[ PUNTO DE GUARDADO ] — Nuevas misiones cargando, aventurero..."
+    "wip": "[ PUNTO DE GUARDADO ] — Nuevas misiones cargando, aventurero...",
+    "readMore": "Leer más",
+    "readLess": "Leer menos"
   },
   "education": {
     "titlePart1": "Educación y",

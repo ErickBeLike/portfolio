@@ -39,7 +39,9 @@
       "date": "May 2025 - August 2025",
       "description": "Collaborative development of a gaming e-commerce, simulating the dual role of developer and client to strengthen skills in communication, requirements gathering, and product-oriented thinking."
     },
-    "wip": "[ SAVE POINT ] — New quests loading, adventurer..."
+    "wip": "[ SAVE POINT ] — New quests loading, adventurer...",
+    "readMore": "Read more",
+    "readLess": "Read less"
   },
   "education": {
     "titlePart1": "Education &",
